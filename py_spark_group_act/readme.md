@@ -20,6 +20,13 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+4. Set the PySpark Python environment:
+
+```powershell
+$env:PYSPARK_PYTHON = (Get-Command python).Source
+$env:PYSPARK_DRIVER_PYTHON = (Get-Command python).Source
+```
+
 ## Run
 
 Make sure `ecomerce.csv` is in the project folder, then run:
