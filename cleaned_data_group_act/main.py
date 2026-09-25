@@ -52,22 +52,12 @@ summary = {}
 # ============================================================================
 # 1. DATA INTEGRATION
 # ============================================================================
-# Both files are semicolon-delimited and share the free-text column MET1
-# (the respondent's answer to "how would you mitigate AI's energy impact?").
-# data_analysis.csv holds the raw survey (demographics, attitudes, charge
-# allocations). data_analysis_strategies.csv holds four LLMs' independent
-# classification of that same free-text answer into 10 strategy categories
-# (one boolean column per model per category). We integrate them into a
-# single respondent-level table keyed on MET1.
+
 banner("STAGE 1: DATA INTEGRATION")
 
 survey = spark.read.csv(SURVEY_PATH, header=True, sep=";", inferSchema=True)
 strategies = spark.read.csv(STRATEGIES_PATH, header=True, sep=";", inferSchema=True)
 
-# Model names in the header (e.g. "qwen2.5-vl-72b-instruct_select_provider")
-# contain literal dots, which Spark's column-expression parser treats as
-# nested-field access. Sanitize to underscores so every column can be
-# referenced safely with F.col() / dot notation throughout the pipeline.
 def sanitize_columns(df):
     for c in df.columns:
         safe = c.replace(".", "_")

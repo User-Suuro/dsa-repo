@@ -27,15 +27,9 @@ $env:PYSPARK_PYTHON = (Get-Command python).Source
 $env:PYSPARK_DRIVER_PYTHON = (Get-Command python).Source
 ```
 
-## Run
-
-```powershell
-python sparksession.py
-```
-
 ## Requirements
 
 * Python 3.14.7
 * Java JDK 17
 * PySpark 4.2.0
-* Pandas 2.3.3
+* Pandas 3.0.6
