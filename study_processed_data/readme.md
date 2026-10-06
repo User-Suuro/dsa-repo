@@ -1,4 +1,6 @@
-# PySpark Individual Activity
+# PySpark Group Activity
+
+## NOTE: ANY DATASET IS NOT INCLUDED IN THIS REPOSITORY (contains personal data). Please request the dataset from the author if you wish to run this pipeline."
 
 ## Setup
 
@@ -27,16 +29,9 @@ $env:PYSPARK_PYTHON = (Get-Command python).Source
 $env:PYSPARK_DRIVER_PYTHON = (Get-Command python).Source
 ```
 
-## Run
-
-Make sure `ecomerce.csv` is in the project folder, then run:
-
-```powershell
-python main.py
-```
-
 ## Requirements
 
 * Python 3.14.7
 * Java JDK 17
 * PySpark 4.2.0
+* Pandas 3.0.6

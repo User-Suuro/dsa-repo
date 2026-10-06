@@ -1,0 +1,9 @@
+KEY INSIGHTS
+============
+1. Overall awareness is about the same as self-reported behaviour: mean Awareness_Index = 3.84 vs Behavior_Index = 3.81 (1-5 scale); average gap = 0.03 points. Both sit in the 'Agree' range.
+2. Highest agreement: 'Avoid unnecessary AI use (Q6)' (80.7% agree). Lowest agreement: 'Consider env. impact when using AI (Q5)' (63.9%).
+3. 77.1% of respondents are aligned (awareness and behaviour within 1 point), 10.8% are 'aware but not acting' and 12.0% act more than their awareness score suggests.
+4. Heavy users (daily+, n=45) have Behavior_Index 3.6 vs 4.36 for light users (n=7); awareness is 3.58 vs 4.29.
+5. Awareness and behaviour show a strong correlation (r = 0.779); usage frequency vs behaviour is weak (r = -0.238). Correlation does not imply causation (n = 83).
+6. Most-cited environmental concern (Q7): Water use / scarcity (55.1% of 78 valid answers). Most-suggested solution (Q8): Education & training (51.3% of 78 valid answers). Themes are keyword-coded, so treat percentages as approximate.
+7. The sample is young: 84.3% are aged 18-24, so age-group comparisons are not reliable (other bands have very few respondents) and results do not generalise to the wider public.
