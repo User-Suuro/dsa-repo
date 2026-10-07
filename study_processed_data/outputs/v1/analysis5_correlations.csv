@@ -1,0 +1,8 @@
+var_1,var_2,pearson_r
+aware_energy_n,aware_carbon_n,0.904
+Awareness_Index,Behavior_Index,0.779
+consider_impact_n,avoid_use_n,0.738
+usage_freq_n,Awareness_Index,-0.178
+usage_freq_n,Behavior_Index,-0.238
+aware_energy_n,consider_impact_n,0.677
+aware_carbon_n,avoid_use_n,0.783
