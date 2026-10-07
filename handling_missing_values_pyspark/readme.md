@@ -28,7 +28,7 @@ $env:PYSPARK_DRIVER_PYTHON = (Get-Command python).Source
 ```
 
 ## Run
-s
+
 ```powershell
 python main.py
 ```
