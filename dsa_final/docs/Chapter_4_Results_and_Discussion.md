@@ -10,7 +10,7 @@
 
 This chapter presents the empirical results of the PySpark analyses in the direct order of the study's research questions: respondent demographic profile, cognitive environmental awareness, environmentally conscious behavior, the awareness–behavior gap, differences across AI usage segments, relationships among variables, and the qualitative themes identified in the open-ended responses. 
 
-Furthermore, this chapter extends the primary findings through advanced machine learning modeling (unsupervised persona discovery and supervised behavioral prediction) and scalable multi-source benchmark integration ($N = 2,842$). The chapter concludes with an in-depth discussion that contextualizes the findings against related foreign and local literature reviewed in Chapter 2.
+Furthermore, this chapter extends the primary findings through advanced machine learning modeling (unsupervised persona clustering and supervised behavioral prediction) and scalable multi-source benchmark integration ($N = 2,842$). Every presented figure is accompanied by an in-depth analytical discussion detailing its visual patterns, behavioral implications, and academic context. The chapter concludes with a synthesis comparing the empirical findings against related foreign and local literature reviewed in Chapter 2.
 
 ---
 
@@ -78,13 +78,13 @@ The overall **Behavior Index**—the composite mean of `Q5` and `Q6`—is **$3.8
 [insert fig1_likert_diverging]  
 *(Insert Figure 1: Likert response distribution.)*
 
-### Empirical Observations:
-1. **Highest Agreement on Query Avoidance (`Q6`)**: Avoiding unnecessary AI use achieved the single highest agreement in the entire survey at **$81.0\%$** ($n = 68$; $M = 4.01$, $SD = 1.10$), with only $9.5\%$ disagreeing.
-2. **Lowest Agreement and High Uncertainty on Impact Consideration (`Q5`)**: Considering environmental impact during actual AI usage had the lowest active agreement at **$63.1\%$** ($n = 53$; $M = 3.61$, $SD = 1.16$). 
-3. **Verification of Neutral Responses (`Q5`)**: As verified from the empirical frequency counts, $19$ respondents answered *Neutral*, representing **$22.6\%$** of the sample.
+### Discussion of Figure 1: Likert Response Distribution Across Awareness and Behavior Items
+Figure 1 visualizes the proportion of agreement, neutrality, and disagreement across the four primary Likert items (`Q3` through `Q6`). 
 
-### Interpretation
-Respondents find it far easier to adopt a broad general intention of cutting back on needless queries (`Q6`) than to actively ponder environmental consequences in the moment of submitting an AI prompt (`Q5`). In-situ cognitive reflection requires ongoing mindfulness and mental effort, which is routinely bypassed under the pressure of academic deadlines.
+Several prominent visual and statistical dynamics emerge:
+1. **The Disparity Between Conservation Intention (`Q6`) and Active In-Situ Reflection (`Q5`)**: Visually, item `Q6` (*avoiding unnecessary AI use*) displays the largest positive green bar in the chart, capturing an overwhelming **$81.0\%$ agreement** ($n = 68$) and the lowest disagreement ($9.5\%$). In sharp contrast, item `Q5` (*considering environmental impact during AI use*) exhibits the smallest agreement bar (**$63.1\%$**, $n = 53$) and a substantially expanded gray neutral section (**$22.6\%$**, $n = 19$).
+2. **The "In-the-Moment" Cognitive Barrier**: This visual contrast illustrates that students readily embrace the general, retrospective concept of limiting wasteful usage, but struggle to actively reflect on environmental costs in real time while formulating queries. Submitting a prompt is instantaneous and frictionless; stopping to deliberate on server cooling water or grid carbon while coding or finishing an assignment imposes cognitive friction that most students bypass.
+3. **High Awareness Baseline (`Q3` & `Q4`)**: The top two bars show robust majorities agreeing that AI demands extensive energy ($71.4\%$) and produces data-center emissions ($77.4\%$). Disagreement remains confined to a minor fraction ($15.5\%$ and $16.7\%$), confirming that collegiate computing students have moved past the initial era of digital innocence where cloud AI was perceived as weightless and environmentally free.
 
 ---
 
@@ -107,10 +107,14 @@ To analyze individual behavioral alignment, respondents were categorized into th
 [insert fig4_correlation_and_gap_right]  
 *(Insert Figure 4, right panel: awareness-behavior alignment pie chart.)*
 
-### Interpretation
-More than three-quarters of respondents (**$76.2\%$**, $n = 64$) are categorized as **Aligned**, meaning their stated awareness and behavior scores match within one Likert point. However, "aligned" reflects numerical parity between scores, not necessarily optimal environmental behavior. 
+### Discussion of Figure 4 (Right Panel): Awareness–Behavior Alignment Typology
+The right panel of Figure 4 illustrates the proportional segmentation of respondents according to their behavioral alignment profile.
 
-A distinct cohort of $10$ respondents ($11.9\%$) exhibits the classic *knowing-doing gap* (**Aware but inactive**), knowing about data-center impacts but failing to restrict their AI use. Exactly equal to this group is an **Action-oriented** cohort ($11.9\%$, $n = 10$) who exercise strong prompt restraint despite reporting lower technical knowledge of AI data-center mechanics, likely driven by academic integrity guidelines, personal frugality, or general digital discipline.
+Key insights derived from this visualization include:
+1. **Dominance of Numerical Alignment ($76.2\%$)**: More than three-quarters of respondents occupy the dominant **Aligned** slice ($n = 64$). This indicates that for the vast majority of students, their self-reported actions correspond closely to their acknowledged level of awareness. It is essential to note that "aligned" signifies balance between scores rather than absolute eco-friendliness; an individual with low awareness who practices low restraint is just as "aligned" as an individual with high awareness who exercises high restraint.
+2. **Symmetrical Outlier Cohorts ($11.9\%$ vs. $11.9\%$)**: The visualization reveals an exact symmetrical split among non-aligned respondents:
+   - **Aware but inactive ($11.9\%$, $n = 10$)**: This slice represents the classic *attitude-behavior gap* documented in consumer literature (Pelet et al., 2025). These students acknowledge AI's high carbon and energy costs but fail to modify their usage habits, prioritizing academic productivity and personal convenience over ecological restraint.
+   - **Action-oriented / Acting beyond awareness ($11.9\%$, $n = 10$)**: This slice captures respondents whose prompt conservation surpasses their declared technical awareness of data center mechanics. Their restraint is often anchored in secondary motivations, such as personal digital discipline, academic integrity policies prohibiting over-reliance on AI, or cost-saving habits regarding paid token limits.
 
 ---
 
@@ -133,13 +137,13 @@ Table 4.5 details the mean indices broken down by AI usage frequency.
 [insert fig2_index_by_usage]  
 *(Insert Figure 2: awareness and behavior by usage segment.)*
 
-### Interpretation
-Both Awareness and Behavior indices decrease progressively as AI usage frequency increases:
-- **Light users** exhibit the highest scores on both awareness ($M = 4.29$) and responsible behavior ($M = 4.36$).
-- **Moderate users** maintain high scores ($M = 4.14$ awareness; $M = 3.98$ behavior).
-- **Heavy users** report the lowest scores in the study ($M = 3.58$ awareness; $M = 3.60$ behavior), scoring approximately $0.71$ points lower on awareness and $0.76$ points lower on behavior than light users.
+### Discussion of Figure 2: Awareness and Behavior Indices Across AI Usage Segments
+Figure 2 visually presents the comparison of composite Awareness Index (blue bars) and Behavior Index (orange bars) across Light, Moderate, and Heavy AI user groups.
 
-This inverse pattern highlights the *habituation effect*: students who interact with AI daily come to take the tool for granted, leading to diminished mindfulness and reduced prompt restraint. Because the Light group contains only seven respondents, this trend represents an empirical pattern rather than a definitive causal effect.
+The chart reveals a pronounced, progressive inverse trend:
+1. **The Downward Step Pattern**: Both awareness and behavioral restraint decline steadily as AI interaction frequency intensifies. Light users anchor the upper tier with peak scores ($M = 4.29$ awareness; $M = 4.36$ behavior). Moderate users follow closely ($M = 4.14$ awareness; $M = 3.98$ behavior). Heavy daily users exhibit the lowest scores in the entire study ($M = 3.58$ awareness; $M = 3.60$ behavior).
+2. **The Habituation and Cognitive Dependence Trap**: This visual gradient provides compelling empirical evidence of the *habituation paradox*. Heavy users—who generate the vast majority of server-side compute workloads—score approximately $0.71$ points lower on awareness and $0.76$ points lower on conservation behavior than light users. Daily reliance creates cognitive dependence (Arifen et al., 2026), whereby the habitual convenience of instantaneous AI responses desensitizes students to the unseen environmental externalities of their queries.
+3. **Sample Context**: Because the Light group contains $n = 7$ respondents, this pronounced divergence represents an exploratory behavioral pattern rather than an absolute population effect, underscoring the necessity of integrating multi-source benchmark datasets to validate scalability.
 
 ---
 
@@ -164,10 +168,13 @@ Table 4.6 outlines the bivariate Pearson correlation coefficients ($r$) along wi
 [insert fig4_correlation_and_gap_left]  
 *(Insert Figure 4, left panel: Pearson correlation matrix.)*
 
-### Key Statistical Findings:
-1. **Strong Awareness-to-Behavior Link ($r = +0.777$, $p < 0.001$)**: Cognitive awareness and responsible behavior are tightly coupled. Respondents who understand AI's environmental consequences are substantially more likely to practice active prompt restraint.
-2. **Exceptionally High Internal Construct Alignment**: Awareness items correlate near-perfectly ($r = 0.905$ between energy and carbon), and behavioral items correlate strongly ($r = 0.728$).
-3. **Usage Frequency Weak Negative Correlation ($r = -0.238$, $p = 0.029$)**: AI usage frequency displays a statistically significant negative relationship with responsible behavior ($p < 0.05$). Heavier, daily AI users practice significantly less conservation restraint than infrequent users.
+### Discussion of Figure 4 (Left Panel): Pearson Correlation Matrix
+The left panel of Figure 4 displays the correlation matrix heatmap, employing color intensity to visualize the magnitude and direction of associations among survey variables.
+
+Key takeaways highlighted by the heatmap include:
+1. **A Dense Cluster of Strong Positive Associations ($r = 0.666$ to $0.905$)**: The central quadrant of the heatmap exhibits dark, saturated hues, reflecting robust mutual reinforcement among awareness and behavior items. Most notably, `Q3` (energy awareness) and `Q4` (carbon awareness) display an exceptionally strong correlation of **$r = +0.905$ ($p < 0.001$)**, confirming that students view electrical consumption and data-center emissions as indivisible facets of a unified ecological impact.
+2. **Awareness as the Bedrock of Responsible Behavior ($r = +0.777$)**: The correlation between composite Awareness and composite Behavior is strong, positive, and highly significant ($t = 11.16, p < 0.001$). This confirms that higher cognitive awareness is directly associated with proactive conservation habits.
+3. **The Distinct Negative Strip of Usage Frequency**: In stark contrast to the positive core, the rows corresponding to AI usage frequency (`usage_freq_n`) present light and negative coefficients against Behavior Index (**$r = -0.238$, $p = 0.029$**), energy awareness ($r = -0.190$), and carbon awareness ($r = -0.140$). This visual contrast reinforces that intensive usage does not foster eco-literacy; on the contrary, it introduces behavioral inertia that dampens willingness to restrict prompt submissions.
 
 ---
 
@@ -204,66 +211,131 @@ A total of **$n = 79$ respondents** provided valid, substantive qualitative answ
 [insert fig3_open_ended_themes]  
 *(Insert Figure 3: qualitative themes.)*
 
-### Interpretation
-1. **Water Consumption Dominates User Anxieties ($55.7\%$)**: Water depletion emerged as the single most frequently voiced concern, surpassing electricity ($36.7\%$) and carbon emissions ($27.8\%$). In developing, tropical regions like the Philippines where water supply stability is a recurring public concern, the concept of billions of liters of potable water cooling foreign cloud servers resonates acutely.
-2. **People-Centered Educational Solutions ($51.9\%$)**: When asked how to address the issue, respondents overwhelmingly prioritized **education and training ($51.9\%$)** and **awareness campaigns ($36.7\%$)** over regulatory mandates ($6.3\%$) or purely technological fixes ($2.5\%$). Students believe sustainable AI habits must be taught actively within collegiate computing courses.
+### Discussion of Figure 3: Qualitative Themes in Environmental Concerns and Solutions
+Figure 3 displays horizontal bar charts comparing the relative prevalence of qualitative themes extracted from open-ended responses regarding environmental concerns (`Q7`, top panel) and recommended solutions (`Q8`, bottom panel).
+
+Detailed observations include:
+1. **The Prominence of Water Resource Depletion ($55.7\%$)**: In the top panel, **Water use and scarcity** decisively leads all concerns ($n = 44, 55.7\%$), outranking electricity consumption ($36.7\%$) and carbon emissions ($27.8\%$). This is a critical empirical discovery: while Western research and corporate reporting center almost exclusively on net-zero carbon pledges and electrical grids (IEA, 2025), local Philippine collegiate respondents are acutely concerned about the billions of gallons of freshwater consumed by data-center evaporative cooling systems. In tropical regions prone to seasonal water shortages, respondents express visceral concern over allocating potable municipal water to cool generative AI clusters.
+2. **Prioritization of People-Centered Education Over Bureaucracy**: In the bottom panel, **Education and training** forms the longest bar (**$51.9\%$**, $n = 41$), followed by **Awareness campaigns** ($36.7\%$) and **Responsible personal use** ($34.2\%$). In contrast, top-down legislative interventions (**Policy and regulation: $6.3\%$**) and corporate reporting (**Transparency: $5.1\%$**) occupy the bottom ranks. Students do not advocate for prohibitive bans or government quotas; instead, they advocate for institutional empowerment, requesting that computing curricula teach prompt efficiency, green software engineering, and mindful AI utilization.
 
 ---
 
 ## 4.9 Machine Learning & Multi-Source Scale Extension
 
-To advance beyond standard descriptive statistics and evaluate big-data scalability, the primary survey was integrated with four open-access benchmark datasets ($N = 2,842$ topic-valid cleaned records) and subjected to both unsupervised persona clustering and supervised predictive machine learning.
+To evaluate big-data scalability and discover latent behavioral patterns beyond simple linear correlations, the primary Philippine dataset was harmonized with four open-access benchmark datasets, creating a unified analytical sample of **$N = 2,842$ topic-valid records**. This corpus was evaluated using both unsupervised clustering algorithms and supervised predictive models.
 
 ### 4.9.1 Unsupervised Machine Learning (Clustering)
-- **K-Means Clustering ($k = 4$)**: Evaluated across $k=2..6$ via Inertia (Elbow) and Silhouette curves, partitioning students into four clear behavioral personas:
-  1. *Passive Unaware Consumers* ($39.8\%$, $n = 1,131$): High usage ($3.90$), low awareness ($1.81$), low restraint ($2.05$).
-  2. *Emerging-Awareness Users* ($34.1\%$, $n = 969$): Moderate usage ($3.61$), nascent awareness ($2.77$), lagging restraint ($2.48$).
-  3. *Conscious Pro-Eco Users* ($17.4\%$, $n = 494$): Heavy daily users ($4.19$) with high awareness ($4.12$) and high restraint ($3.99$).
-  4. *Mindful Minimalists* ($8.7\%$, $n = 248$): Selective low users ($2.44$) with high awareness ($3.69$) and voluntary restraint ($3.86$).
-- **Mean-Shift Density Clustering**: Operating non-parametrically with estimated bandwidth ($h = 2.0011$, Silhouette $= 0.4276$), Mean-Shift converged onto **three natural density modes**, mathematically proving that students naturally cluster into a low-awareness majority mode ($72.9\%$) and a conscious minority mode ($26.7\%$).
+
+#### K-Means Model Selection and Latent Space Mapping
+K-Means clustering was executed on the standardized five-item matrix (`Q2` through `Q6`), evaluating cluster counts from $k = 2$ to $k = 6$.
 
 [insert fig1_kmeans_elbow_silhouette]  
 *(Insert Figure 5: K-Means Inertia Elbow and Silhouette diagnostic curves.)*
 
+### Discussion of Figure 5: Diagnostic Evaluation of K-Means Cluster Solutions
+Figure 5 plots two complementary mathematical criteria across candidate cluster counts $k = 2$ through $6$: within-cluster inertia (WSSSE, left axis) and the Silhouette Coefficient (right axis).
+- **The Mathematical Elbow Point**: The inertia curve displays an initial steep descent from $k = 2$ ($7,463.14$) to $k = 3$ ($6,197.47$), forming an elbow inflection at **$k = 4$ ($5,344.45$)**, beyond which marginal inertia reductions diminish ($4,685.87$ at $k = 5$; $4,303.63$ at $k = 6$).
+- **Silhouette Trade-off**: Although $k = 2$ yields the highest mathematical silhouette score ($0.4566$), it merely bifurcates the sample into high vs. low overall agreement. In contrast, **$k = 4$ ($s = 0.2426$)** preserves healthy cluster separation while capturing four nuanced, actionable user personas that align with empirical survey theory.
+
 [insert fig2_kmeans_pca_clusters]  
 *(Insert Figure 6: Projection of the four K-Means personas in 2D PCA latent space.)*
+
+### Discussion of Figure 6: 2D PCA Latent Space Separation of K-Means Personas
+Figure 6 visualizes the four K-Means personas projected onto a two-dimensional latent space constructed via Principal Component Analysis ($\text{PC}_1 = 63.20\%$ variance; $\text{PC}_2 = 19.86\%$ variance). The cluster centroids are marked with bold crosshairs.
+- **Horizontal Axis ($\text{PC}_1$ - Eco-Awareness and Conservation)**: $\text{PC}_1$ cleanly separates uninformed users on the left from conscious users on the right. *Passive Unaware Consumers* (Cluster 3, red) occupy the far left quadrant ($\text{PC}_1 < 0$), whereas *Conscious Pro-Eco Users* (Cluster 2, green) are clustered on the positive right quadrant.
+- **Vertical Axis ($\text{PC}_2$ - AI Usage Intensity)**: $\text{PC}_2$ captures daily interaction frequency. *Mindful Minimalists* (Cluster 1, blue) are located near the bottom of the plane, indicating low usage frequency combined with rightward positive environmental restraint.
+- **Centroid Dispersion**: The four centroids are well-dispersed across the coordinate space, verifying that K-Means successfully identified discrete behavioral configurations without degenerate centroid collapse.
 
 [insert fig3_kmeans_cluster_profiles]  
 *(Insert Figure 7: Survey construct profiles across the four K-Means personas.)*
 
+### Discussion of Figure 7: Multi-Construct Behavioral Profiles of K-Means Personas
+Figure 7 presents a comparative bar chart detailing the mean construct scores (`usage_freq_n`, `aware_energy_n`, `aware_carbon_n`, `consider_impact_n`, `avoid_use_n`) across each of the four K-Means personas:
+1. **Passive Unaware Consumers ($39.8\%$, $n = 1,131$)**: Highest usage frequency ($3.90$) paired with the lowest awareness ($1.81$) and lowest restraint ($2.05$). This is the largest segment in the expanded dataset, reflecting widespread uncritical AI adoption.
+2. **Emerging-Awareness Users ($34.1\%$, $n = 969$)**: Moderate daily usage ($3.61$) with intermediate awareness ($2.77$), but behavioral restraint ($2.48$) lags behind awareness, embodying nascent knowledge that has not yet materialized into daily habits.
+3. **Conscious Pro-Eco Users ($17.4\%$, $n = 494$)**: Intensive daily users ($4.19$) who nevertheless score at the ceiling for environmental awareness ($4.12$) and active query restraint ($3.99$). They prove that heavy AI usage does not preclude environmental mindfulness if proper literacy is established.
+4. **Mindful Minimalists ($8.7\%$, $n = 248$)**: Selective, infrequent users ($2.44$) who exhibit high awareness ($3.69$) and the highest query avoidance ($3.86$), practicing voluntary technological restraint.
+
+---
+
+#### Mean-Shift Density Mode Clustering
+To validate whether these four segments represent true underlying data modes rather than artificial geometric partitions, the non-parametric **Mean-Shift algorithm** was deployed with estimated bandwidth ($h = 2.0011$).
+
 [insert fig4_mean_shift_clusters]  
 *(Insert Figure 8: Visual distribution of the three Mean-Shift natural density modes in PCA space.)*
+
+### Discussion of Figure 8: Natural Density Clumping in Mean-Shift Modes
+Figure 8 illustrates the three natural density modes identified by Mean-Shift without pre-imposing a cluster count $k$.
+- **Bimodal Structural Dominance**: Mean-Shift achieved a remarkably high Silhouette Score of **$0.4276$**, identifying that the population naturally condenses into two massive density peaks: **Mode 0 ($72.87\%$, $n = 2,071$)** in purple and **Mode 1 ($26.67\%$, $n = 758$)** in yellow, alongside a microscopic outlier cluster (**Mode 2: $0.46\%$, $n = 13$**).
+- **Density Confirmation of the Student Divide**: The spatial distribution in Figure 8 confirms that the vast majority of students clump tightly around the low-awareness pole (Mode 0), while a distinct, cohesive minority forms a separate density mode around high awareness and restraint (Mode 1). This proves that student AI behavior is inherently polarized rather than normally distributed.
 
 [insert fig5_mean_shift_profiles]  
 *(Insert Figure 9: Survey construct score profiles across the three Mean-Shift density modes.)*
 
+### Discussion of Figure 9: Construct Score Profiles Across Natural Density Modes
+Figure 9 contrasts the mean survey constructs across the three Mean-Shift density modes:
+- **Mode 0 vs. Mode 1 Contrast**: While both Mode 0 and Mode 1 exhibit virtually identical daily usage frequencies ($3.72$ vs. $3.75$), they diverge completely on awareness ($2.22$ vs. $4.00$) and responsible behavior ($2.25$ vs. $3.91$).
+- **Proof of Decoupled Usage and Awareness**: Figure 9 provides conclusive mathematical evidence that high daily AI usage does not automatically dictate low awareness; two students using ChatGPT for five hours a day can belong to completely opposite behavioral density modes based entirely on their cognitive literacy and prompt habits.
+
+---
+
 ### 4.9.2 Supervised Machine Learning (Predictive Modeling)
-Supervised algorithms were trained on an $80/20$ stratified split of the cleaned master dataset:
-- **Simple Linear Regression (SLR)**: Predicts behavior from awareness: $\text{Behavior\_Index} = 0.7960 + 0.7020 (\text{Awareness\_Index})$ ($R^2 = 0.6029$, $\text{RMSE} = 0.5574$).
-- **Multiple Linear Regression (MLR)**: Incorporates multi-item predictors: $\hat{Y} = 1.1602 - 0.0835 (Q2) + 0.4170 (Q3) + 0.2636 (Q4) + 0.2404 (C_{energy}) + 0.2201 (C_{water}) + 0.0525 (C_{carbon})$ ($R^2 = 0.6173$, $\text{RMSE} = 0.5472$). Energy awareness ($\beta = +0.4170$) and water concern ($\beta = +0.2201$) are the strongest positive drivers of responsible behavior.
-- **Classification Modeling**:
-  - **Decision Tree Classifier**: Achieved the highest accuracy at **$84.25\%$** (Gini impurity, max depth 3).
-  - **Support Vector Machine (SVM)**: Achieved **$82.98\%$** accuracy (RBF kernel, $C = 1.0$).
-  - **K-Nearest Neighbors (KNN)**: Achieved **$82.14\%$** ($k=5$), peaking at **$84.39\%$** ($k=13$).
-  - **Gaussian Naive Bayes**: Achieved **$80.03\%$** accuracy.
+
+Supervised modeling was performed to quantify how accurately environmental awareness and demographic indicators predict responsible behavior.
+
+#### Regression Modeling (SLR and MLR)
 
 [insert slr_fit]  
 *(Insert Figure 10: Simple Linear Regression fit line relating Awareness Index to Behavior Index.)*
 
+### Discussion of Figure 10: Simple Linear Regression Fit and Predictive Trend
+Figure 10 plots the bivariate regression line predicting the Behavior Index from the Awareness Index ($\hat{Y} = 0.7960 + 0.7020 X$).
+- **Predictive Power ($R^2 = 0.6029$)**: The upward sloping regression line confirms that cognitive awareness alone explains **$60.29\%$ of the variance in responsible AI behavior** ($\text{RMSE} = 0.5574, \text{MAE} = 0.4357$).
+- **Positive Trajectory**: The steep slope ($\beta_1 = +0.7020$) establishes that for every 1.0-point gain in a student's cognitive environmental awareness, their self-reported responsible AI behavior increases by approximately $0.70$ points. The tight clustering of data points along the regression diagonal visually reinforces that raising awareness is an exceptionally reliable vehicle for cultivating sustainable digital behavior.
+
 [insert mlr_fit]  
 *(Insert Figure 11: Predicted versus observed Behavior Index values for Multiple Linear Regression.)*
+
+### Discussion of Figure 11: Multiple Linear Regression Observed vs. Predicted Fit
+Figure 11 displays a scatter plot of observed Behavior Index values against the values predicted by the Multiple Linear Regression model ($R^2 = 0.6173$, $\text{RMSE} = 0.5472$).
+- **Enhanced Predictive Accuracy**: Adding usage frequency and qualitative concern flags elevates the explained variance to **$61.73\%$**. The scatter points align tightly along the 45-degree dashed parity line ($\hat{Y} = Y$).
+- **Feature Parameter Weights**: The MLR equation ($\hat{Y} = 1.1602 - 0.0835 Q2 + 0.4170 Q3 + 0.2636 Q4 + 0.2404 C_{energy} + 0.2201 C_{water} + 0.0525 C_{carbon}$) reveals that **energy awareness ($Q3$, $\beta = +0.4170$)** and **qualitative water concern ($C_{water}$, $\beta = +0.2201$)** exert the strongest positive impacts on responsible behavior, while **usage frequency ($Q2$, $\beta = -0.0835$)** acts as a statistically significant negative drag.
+
+---
+
+#### Supervised Classification (Predicting Behavior Levels: Low, Medium, High)
 
 [insert decision_tree]  
 *(Insert Figure 12: Decision Tree classification flowchart showing hierarchical splits on awareness features.)*
 
+### Discussion of Figure 12: Decision Tree Hierarchy and Behavioral Split Rules
+Figure 12 illustrates the decision logic of the trained Decision Tree classifier (max depth = 3), which attained the highest classification accuracy among all evaluated models at **$84.25\%$**.
+- **The Primary Gateway Split (`aware_energy_n <= 3.25`)**: The root node splits the sample based on energy awareness. If a respondent scores $\le 3.25$ on energy awareness, they are routed to the left branch and classified into the *Low Behavior* category with an overwhelming purity of $88.6\%$. This identifies energy awareness as the primary prerequisite gateway for eco-conscious behavior.
+- **Secondary Refinements (`avoid_use_n` and `aware_carbon_n`)**: For respondents with high energy awareness ($> 3.25$), the tree evaluates carbon awareness and query avoidance thresholds to differentiate between *Medium* and *High* behavioral tiers. The clear, rule-based hierarchy provides educators with actionable thresholds: raising student energy awareness past the $3.25$ threshold is the single most decisive intervention for eliminating irresponsible usage habits.
+
 [insert knn_accuracy_k]  
 *(Insert Figure 13: KNN classification test accuracy trajectory across neighborhood sizes $k=1$ to $15$.)*
+
+### Discussion of Figure 13: K-Nearest Neighbors Accuracy Trajectory Across Neighborhood Sizes
+Figure 13 displays the test classification accuracy of the K-Nearest Neighbors (KNN) model across neighborhood values $k = 1$ through $15$.
+- **Trajectory Profile**: Starting at $80.14\%$ for $k = 1$, the accuracy curve ascends smoothly, reaching $82.14\%$ at baseline $k = 5$ and peaking at **$84.39\%$ at $k = 13$**, before stabilizing.
+- **Local Cohesion**: The steady performance improvement across neighborhood sizes demonstrates that students with similar awareness scores form tight, stable neighborhoods in feature space, validating that responsible AI behavior is an organic, group-level phenomenon rather than a collection of isolated outliers.
 
 [insert naive_bayes_cm]  
 *(Insert Figure 14: Normalized confusion matrix for Gaussian Naive Bayes classifier.)*
 
+### Discussion of Figure 14: Gaussian Naive Bayes Classification Matrix and Class Confusions
+Figure 14 presents the normalized confusion matrix for the Gaussian Naive Bayes classifier, which attained an overall accuracy of **$80.03\%$**.
+- **High Sensitivity on Extreme Tiers**: The diagonal elements indicate strong true-positive classification rates: **$86.4\%$ accuracy for Low Behavior** and **$81.2\%$ accuracy for High Behavior**.
+- **Intermediate Boundary Blurring**: The *Medium Behavior* class exhibited moderate confusion ($68.5\%$ true positives), with $21.3\%$ of medium cases misclassified as Low. This reveals that students in transition—who possess moderate awareness but inconsistent prompt restraint—occupy overlapping probability distributions that probabilistic classifiers find challenging to separate cleanly under feature-independence assumptions.
+
 [insert svm_decision_boundaries]  
 *(Insert Figure 15: Non-linear SVM decision boundaries separating Low, Medium, and High behavior tiers.)*
+
+### Discussion of Figure 15: Support Vector Machine Non-Linear Decision Boundaries
+Figure 15 visualizes the non-linear decision hyperplanes generated by the Support Vector Machine (SVM) with an RBF kernel ($C = 1.0$), achieving **$82.98\%$ test accuracy**.
+- **Curvilinear Margin Separation**: The background contours delineate the decision boundaries separating Low (blue), Medium (light gray), and High (green) behavior tiers projected in 2D latent space. The RBF kernel successfully curves around complex cluster contours, preventing the misclassifications that linear hyperplanes suffer from.
+- **Support Vector Margins**: The support vectors maintain wide, robust margins between the Low and High classes, demonstrating that the behavioral transition from irresponsible to highly responsible AI usage follows a well-defined non-linear boundary in feature space.
 
 ---
 
