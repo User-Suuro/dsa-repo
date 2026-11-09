@@ -17,7 +17,7 @@ Every record in the single unified dataset is mapped strictly to the 8 questionn
 - **`avoid_unnecessary_use` / `avoid_use_n` (`Q6`)**: Willingness to avoid unnecessary AI usage to reduce environmental impact (`[1.0, 5.0]`).
 - **`concern_text` (`Q7`)**: Open-ended environmental impact concern (`c_water`, `c_energy`, `c_carbon`, `c_ewaste`, `c_noise_heat`, `c_ecosystem`).
 - **`awareness_text` (`Q8`)**: Open-ended suggestion for improving public awareness and responsible AI usage (`s_education`, `s_campaign`, `s_policy`, `s_transparency`, `s_tech`, `s_responsible_use`).
-- **Composite Indices & Segments (`docs/`)**: `Awareness_Index = (Q3 + Q4) / 2`, `Behavior_Index = (Q5 + Q6) / 2`, `Awareness_Behavior_Gap = Awareness_Index - Behavior_Index`, `usage_segment`, `awareness_level`, `behavior_level`, and `gap_type` (`Aligned`, `Aware but not acting`, `Acting beyond awareness`).
+- **Composite Indices & Segments (`docs/`)**: `Awareness_Index = (Q3 + Q4) / 2`, `Behavior_Index = (Q5 + Q6) / 2`, `Awareness_Behavior_Gap = Awareness_Index - Behavior_Index`, `usage_segment`, `awareness_level`, `behavior_level`, and `gap_type` (`Unaware & not acting`, `Aware & taking action`, `Aware but not acting`, `Acting beyond awareness`).
 
 ## 2. Rows Cleaned vs. Lost / Removed as Unrelated Per Study
 

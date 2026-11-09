@@ -645,18 +645,24 @@ def plot_fig6_correlation_and_gap(df: DataFrame, gap_pdf: pd.DataFrame) -> None:
     fig.colorbar(im, ax=axes[0], fraction=0.046)
 
     pie_cols = {
-        "Aligned": "#67a9cf",
+        "Unaware & not acting": "#94a3b8",
+        "Aware & taking action": "#2166ac",
         "Aware but not acting": "#ef8a62",
-        "Acting beyond awareness": "#999999",
+        "Acting beyond awareness": "#16a34a",
     }
-    axes[1].pie(
+    wedges, texts, autotexts = axes[1].pie(
         gp,
         labels=[f"{k}\n(n={int(v):,})" for k, v in gp.items()],
         autopct="%1.1f%%",
-        startangle=90,
+        pctdistance=0.72,
+        startangle=140,
         colors=[pie_cols.get(k, "#94a3b8") for k in gp.index],
-        wedgeprops={"edgecolor": "white"},
+        wedgeprops={"edgecolor": "white", "linewidth": 1.2},
+        textprops={"fontsize": 8.5, "fontweight": "bold"},
     )
+    for idx_w, k in enumerate(gp.index):
+        if k in ("Aware & taking action", "Acting beyond awareness"):
+            autotexts[idx_w].set_color("white")
     axes[1].set_title(f"B. Awareness-Behavior Alignment (N = {tot_n:,})", fontweight="bold")
 
     fig.suptitle(

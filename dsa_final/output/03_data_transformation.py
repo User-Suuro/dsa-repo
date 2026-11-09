@@ -124,7 +124,8 @@ def engineer_docs_composite_indices_and_segments(df: DataFrame) -> DataFrame:
             "gap_type",
             F.when(F.col("Awareness_Behavior_Gap") >= 1.0, "Aware but not acting")
             .when(F.col("Awareness_Behavior_Gap") <= -1.0, "Acting beyond awareness")
-            .otherwise("Aligned"),
+            .when(F.col("Awareness_Index") >= 3.0, "Aware & taking action")
+            .otherwise("Unaware & not acting"),
         )
     )
     log("Engineered Awareness_Index, Behavior_Index, Awareness_Behavior_Gap, usage_segment, awareness_level, behavior_level, gap_type")

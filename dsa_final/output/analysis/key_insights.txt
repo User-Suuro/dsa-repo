@@ -60,7 +60,8 @@ Consider env. impact when using AI (Q5)                226      1271      728   
 
 6. ANALYSIS 3 — AWARENESS-TO-BEHAVIOR GAP TYPOLOGY:
                gap_type  count  pct
-                Aligned   2522 88.7
+   Unaware & not acting   1679 59.1
+  Aware & taking action    843 29.7
    Aware but not acting    195  6.9
 Acting beyond awareness    125  4.4
 
