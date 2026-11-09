@@ -1,0 +1,5 @@
+cluster_id,count,mean_q2_usage,mean_q3_energy,mean_q4_carbon,mean_q5_consider,mean_q6_avoid,mean_awareness,mean_behavior,mean_gap,share_pct,persona_name
+0,916,3.68,2.84,2.77,2.55,2.41,2.81,2.48,0.33,32.2,"Emerging-Awareness Users (Moderate Usage, Action Lags)"
+1,1164,3.86,1.78,1.84,1.96,2.17,1.81,2.06,-0.25,41.0,Passive Unaware Consumers (Very Low Awareness & Restraint)
+2,227,2.29,3.53,3.45,3.63,3.69,3.49,3.66,-0.17,8.0,Mindful Minimalists (Light Usage & High Restraint)
+3,535,4.1,4.13,4.13,3.97,4.07,4.13,4.02,0.11,18.8,Conscious Pro-Eco Users (High Awareness & Action)

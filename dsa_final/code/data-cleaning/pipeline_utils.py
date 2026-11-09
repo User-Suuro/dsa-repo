@@ -50,7 +50,7 @@ os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 # ==============================================================================
 CODE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.abspath(os.path.join(CODE_DIR, "..", ".."))
-OUTPUT_ROOT = os.path.join(PROJECT_DIR, "output")
+OUTPUT_ROOT = os.path.join(PROJECT_DIR, "output", "data-cleaning")
 DATASET_DIR = os.path.join(PROJECT_DIR, "dataset")
 LIVERPOOL_DIR = os.path.join(
     DATASET_DIR,

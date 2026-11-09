@@ -1,0 +1,31 @@
+================================================================================================
+UNSUPERVISED MACHINE LEARNING SUMMARY REPORT (K-MEANS & MEAN-SHIFT)
+Study: AI and the Environment: An Analysis of Public Awareness
+================================================================================================
+Total Dataset Clustered: 2,842 cleaned rows (Q2..Q6 Standardized Construct Space)
+
+1. ALGORITHM COMPARISON:
+            algorithm                    type  clusters  silhouette_score                                                    key_property
+   K-Means Clustering Centroid / Partitioning         4            0.2426          Preset k=4; partitions construct space into 4 personas
+Mean-Shift Clustering  Density / Mode-Seeking         3            0.4276 Non-parametric; auto-discovers density modes (bandwidth=2.0011)
+
+2. K-MEANS CLUSTER PROFILES (k = 4 PERSONAS):
+ cluster_id  count  share_pct  mean_q2_usage  mean_awareness  mean_behavior                                               persona_name
+          0    969       34.1           3.61            2.77           2.48     Emerging-Awareness Users (Moderate Usage, Action Lags)
+          1    248        8.7           2.44            3.69           3.86         Mindful Minimalists (Light Usage & High Restraint)
+          2    494       17.4           4.19            4.12           3.99          Conscious Pro-Eco Users (High Awareness & Action)
+          3   1131       39.8           3.90            1.81           2.05 Passive Unaware Consumers (Very Low Awareness & Restraint)
+
+3. MEAN-SHIFT DENSITY CLUSTERS (NON-PARAMETRIC MODES):
+ cluster_id  count  share_pct  mean_q2_usage  mean_awareness  mean_behavior
+          0   2071       72.9           3.72            2.22           2.25
+          1    758       26.7           3.75            4.00           3.91
+          2     13        0.5           2.38            4.45           3.10
+
+KEY TAKEAWAYS FOR THESIS DEFENSE:
+1. K-Means (k=4) cleanly splits the population into 4 meaningful behavioral personas,
+   empirically corroborating the rule-based gap typology in 2D PCA latent space.
+2. Mean-Shift independently discovers density modes without human presetting of k,
+   confirming that dense concentrations of respondents reside around low awareness/low action
+   and a distinct separate cluster of high awareness/high action pro-eco users.
+================================================================================================

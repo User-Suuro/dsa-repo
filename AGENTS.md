@@ -14,12 +14,22 @@ Monorepo of Python and PySpark data engineering, survey NLP, statistical analyti
 
 ## Setup and Commands
 ```powershell
-# Run the dsa_final 5-stage pipeline using its dedicated virtual environment
+# Run the dsa_final 5-stage data cleaning & analysis pipeline
 .\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\01_data_integration.py
 .\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\02_data_cleansing.py
 .\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\03_data_transformation.py
 .\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\04_data_reduction.py
 .\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\05_data_analysis_and_visualization.py
+
+# Run Supervised and Unsupervised Machine Learning
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\slr.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\mlr.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\decision_tree.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\knn.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\naive_bayes.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\svm.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\unsupervised-ml-algo\elbow_and_silhouette.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\unsupervised-ml-algo\kmeans.py
 ```
 
 ## Boundaries and Gotchas

@@ -1,0 +1,4 @@
+cluster_id,count,share_pct,mean_q2_usage,mean_q3_energy,mean_q4_carbon,mean_q5_consider,mean_q6_avoid,mean_awareness,mean_behavior,mean_gap
+0,2071,72.9,3.72,2.22,2.22,2.22,2.27,2.22,2.25,-0.03
+1,758,26.7,3.75,4.01,3.98,3.86,3.95,4.0,3.91,0.09
+2,13,0.5,2.38,4.46,4.43,2.44,3.77,4.45,3.1,1.34

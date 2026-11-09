@@ -1,0 +1,12 @@
+feature,display_name,importance,importance_pct
+Awareness_Index,Overall Awareness Index,0.33348342914238316,33.35
+aware_energy_n,Q3 Energy Awareness,0.3158421799315287,31.58
+aware_carbon_n,Q4 Carbon Awareness,0.2705490810136363,27.05
+age_group,Age Group,0.04108746406930383,4.11
+usage_freq_n,Q2 AI Usage Freq,0.028190663108768124,2.82
+c_water,Q7 Water Concern,0.004261896697790835,0.43
+c_energy,Q7 Energy Concern,0.00282138119202283,0.28
+c_carbon,Q7 Carbon Concern,0.0014611179457440565,0.15
+c_noise_heat,Q7 Heat/Noise Concern,0.0009866553571153012,0.1
+c_ecosystem,Q7 Ecosystem Concern,0.0007390743637313539,0.07
+c_ewaste,Q7 E-Waste Concern,0.0005770571779753961,0.06

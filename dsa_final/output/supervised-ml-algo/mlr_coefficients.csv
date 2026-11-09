@@ -1,0 +1,8 @@
+feature,display_name,coefficient
+usage_freq_n,Q2 Usage Freq,-0.0835
+aware_energy_n,Q3 Energy Aware,0.417
+aware_carbon_n,Q4 Carbon Aware,0.2636
+c_water,Q7 Water Concern,0.2201
+c_energy,Q7 Energy Concern,0.2404
+c_carbon,Q7 Carbon Concern,0.0525
+intercept,Model Intercept,1.1602

@@ -776,7 +776,7 @@ def main() -> None:
     corr_df, overall_r = compute_analysis5_correlations(df)
     theme_df, n_c, n_s = compute_analysis6_open_ended_themes(df)
     compute_analysis7_and_8(df)
-    log("Saved 10 topic-aligned analytical & cleaning-audit CSV tables to output/analysis/")
+    log("Saved 10 topic-aligned analytical & cleaning-audit CSV tables to output/data-cleaning/analysis/")
 
     # Generate figures in logical narrative order (Figure 1 through Figure 6)
     clean_existing_figures()
@@ -786,13 +786,13 @@ def main() -> None:
     plot_fig4_index_by_usage(by_seg)
     plot_fig5_open_ended_themes(theme_df, n_c, n_s, total_resp)
     plot_fig6_correlation_and_gap(df, gap_df)
-    log("Saved 6 ordered figures (fig1..fig6) to output/analysis/figures/")
+    log("Saved 6 ordered figures (fig1..fig6) to output/data-cleaning/analysis/figures/")
 
     write_key_insights_report(
         total_resp, sampled_cnt, n_c, n_s, overall_r,
         summary_df, reasons_df, src_summary, a1_df, likert_df, gap_df, by_seg, corr_df, theme_df,
     )
-    log("Saved topic-aligned executive summary to output/analysis/key_insights.txt")
+    log("Saved topic-aligned executive summary to output/data-cleaning/analysis/key_insights.txt")
 
     df.unpersist()
     spark.stop()

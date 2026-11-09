@@ -1,0 +1,2 @@
+model,accuracy,max_depth
+Decision Tree Classifier,0.8425,3

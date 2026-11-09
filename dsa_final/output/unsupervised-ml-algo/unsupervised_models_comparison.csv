@@ -1,0 +1,3 @@
+algorithm,type,clusters,silhouette_score,key_property
+K-Means Clustering,Centroid / Partitioning,4,0.2426,Preset k=4; partitions construct space into 4 personas
+Mean-Shift Clustering,Density / Mode-Seeking,3,0.4276,Non-parametric; auto-discovers density modes (bandwidth=2.0011)

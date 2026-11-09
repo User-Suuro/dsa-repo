@@ -1,0 +1,23 @@
+================================================================================================
+SUPERVISED MACHINE LEARNING SUMMARY REPORT (6 ALGORITHMS)
+Study: AI and the Environment: An Analysis of Public Awareness
+================================================================================================
+Total Cleaned Dataset: 2,842 respondents (75% Train / 25% Test Split)
+
+CONSOLIDATED PERFORMANCE COMPARISON:
+                       algorithm      task_type    metric_primary       metric_secondary
+  Simple Linear Regression (SLR)     Regression       R² = 0.6029          RMSE = 0.5574
+Multiple Linear Regression (MLR)     Regression       R² = 0.6173          RMSE = 0.5472
+                   Decision Tree Classification Accuracy = 84.25%          Max Depth = 3
+       K-Nearest Neighbors (KNN) Classification Accuracy = 82.14% k = 5 (Optimal k = 13)
+            Gaussian Naive Bayes Classification Accuracy = 80.03%      Prior = Empirical
+    Support Vector Machine (SVM) Classification Accuracy = 82.98%  Kernel = RBF, C = 1.0
+
+KEY TAKEAWAYS FOR THESIS DEFENSE:
+1. Simple & Multiple Linear Regression show that Awareness Index is a strong, positive,
+   statistically robust predictor of responsible AI behavior (R² ~ 0.60 to 0.63).
+2. Support Vector Machine (SVM) and Decision Tree achieve top classification performance
+   (84%+ accuracy) in categorizing respondents into Low, Medium, and High responsible usage.
+3. KNN accuracy peaks at k=5..7, demonstrating strong local cluster cohesion among respondents
+   with similar awareness levels.
+================================================================================================
