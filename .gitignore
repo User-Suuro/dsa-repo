@@ -7,3 +7,7 @@ handling_missing_values_pyspark/.venv
 individual_activity_pyspark/.venv
 py_spark_group_act/.venv
 study_processed_data/.venv
+dsa_final/.venv
+.agents
+dsa_final/AGENTS.md
+dsa_final/dataset/main_dataset.csv

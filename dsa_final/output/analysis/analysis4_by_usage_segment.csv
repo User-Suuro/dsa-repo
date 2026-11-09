@@ -1,0 +1,4 @@
+﻿usage_segment,n,mean_awareness,mean_behavior,mean_gap,sd_behavior
+Light (rarely),58,3.54,3.82,-0.28,0.87
+Moderate (weekly),875,2.72,2.72,0.0,0.86
+Heavy (daily+),1909,2.67,2.65,0.02,0.88

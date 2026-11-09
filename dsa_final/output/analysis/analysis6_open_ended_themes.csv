@@ -1,0 +1,13 @@
+﻿question,theme_col,theme,mentions,pct_of_answers
+Q7 concern,c_water,Water use / scarcity,48,39.0
+Q7 concern,c_energy,Energy / electricity use,30,24.4
+Q7 concern,c_carbon,Carbon / climate / pollution,24,19.5
+Q7 concern,c_ewaste,E-waste / resources,14,11.4
+Q7 concern,c_noise_heat,Noise / heat,9,7.3
+Q7 concern,c_ecosystem,Ecosystem / land impact,8,6.5
+Q8 solution,s_education,Education & training,58,38.4
+Q8 solution,s_responsible_use,Responsible / mindful use,43,28.5
+Q8 solution,s_campaign,Awareness campaigns / media,33,21.9
+Q8 solution,s_policy,Policy / regulation,19,12.6
+Q8 solution,s_transparency,Transparency / reporting,9,6.0
+Q8 solution,s_tech,Efficient / renewable tech,3,2.0

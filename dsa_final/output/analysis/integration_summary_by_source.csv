@@ -1,0 +1,6 @@
+﻿source_study,study_role,n_cleaned,mean_q2_usage,mean_q3_energy_aware,mean_q4_carbon_aware,mean_q5_consider_impact,mean_q6_avoid_unnecessary,mean_Awareness_Index,mean_Behavior_Index,mean_Gap
+Main_Study_PH_Env_Awareness,Main Study (PH),72,3.736,3.917,4.042,3.625,4.111,3.979,3.868,0.111
+Public_S2_BD_Cognitive_Dependence,Public Study,2087,3.778,2.295,2.287,2.302,2.323,2.291,2.313,-0.022
+Public_S3_UTAUT_Responsible_GenAI,Public Study,399,3.943,3.895,3.947,3.516,3.655,3.921,3.585,0.336
+Public_S4A_UK_Liverpool_Students,Public Study,262,3.08,3.762,3.699,3.836,4.003,3.73,3.92,-0.189
+Public_S4B_UK_Liverpool_Staff,Public Study,22,2.227,3.477,2.727,4.045,3.989,3.102,4.017,-0.915

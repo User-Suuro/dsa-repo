@@ -1,0 +1,9 @@
+﻿variable,n,mean,sd,median,min,max
+aware_energy_n,2842,2.7,1.06,2.67,1.0,5.0
+aware_carbon_n,2842,2.7,1.05,2.55,1.0,5.0
+consider_impact_n,2842,2.66,0.94,2.4,1.0,5.0
+avoid_use_n,2842,2.72,0.93,2.4,1.0,5.0
+usage_freq_n,2842,3.72,0.71,3.8,1.0,5.0
+Awareness_Index,2842,2.7,0.99,2.5,1.0,5.0
+Behavior_Index,2842,2.69,0.89,2.4,1.0,5.0
+Awareness_Behavior_Gap,2842,0.01,0.64,0.0,-2.21,2.74

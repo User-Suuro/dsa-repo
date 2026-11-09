@@ -1,0 +1,18 @@
+Population,QuestionCode,Source_free_text_prompt
+Students,S1,Please list any GAI tools you currently use:
+Students,S2,"If you use GAI, please describe the tasks have you used it for and what benefits it brings to you?"
+Students,S3,"If you do not use GAI, what stops you from using it?"
+Students,S4,"If yes, in what situations outside of University do you use/envisage using GAI in?"
+Students,S5,"Do you think there are other uses of GAI not covered by the list or any questions above? 
+
+For each additional use listed, please describe if you think the use is acceptable or unacceptable in the context of assessments in University."
+Students,S6,Are there any additional comments you would like to make in terms of your experiences of GAI to date?
+Staff,T1,"If applicable, can you briefly provide some examples of the questions students have brought to you regarding GAI?"
+Staff,T2,"Do you have any concerns about using GAI tools as part of your teaching or assessment activities? And if so, why?"
+Staff,T3,Please briefly expand on your answer choice below:
+Staff,T4,Please briefly expand on your answer choice below:
+Staff,T5,"Out of the following cases, please tick all that you view as being acceptable GAI uses. - Other, please write below - Text"
+Staff,T6,"If there were any you did not agree with, please briefly describe why?"
+Staff,T7,"Please tick all of the following University defined unacceptable GAI use examples that you agree with. - Other examples, please describe in the box below - Text"
+Staff,T8,"If there are any examples you do not agree with, please briefly describe why."
+Staff,T9,Are there any other comments you would like to make in terms of your experiences of student interaction with GAI throughout the 2025/26 academic year?

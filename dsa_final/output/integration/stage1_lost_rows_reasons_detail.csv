@@ -1,0 +1,12 @@
+﻿source_study,study_role,invalid_reason,rows_lost_for_reason
+Main_Study_PH_Env_Awareness,Main Study (PH),"Not Related to Main Topic (Off-Topic Q7: Hacking, Privacy, or AGI Instead of Environment)",7
+Main_Study_PH_Env_Awareness,Main Study (PH),Missing Mandatory Open-Ended Q7 & Q8 (Both Blank),4
+Main_Study_PH_Env_Awareness,Main Study (PH),Non-Substantive Open-Ended Q7 & Q8 (Placeholder '.' Only),1
+Public_S2_BD_Cognitive_Dependence,Public Study,Exact Duplicate Respondent Record (All 30 Columns Identical),451
+Public_S2_BD_Cognitive_Dependence,Public Study,Invalid Straight-Line Uniform Response (All 25 Items Identical),75
+Public_S3_UTAUT_Responsible_GenAI,Public Study,Exact Duplicate Respondent Record (All 31 Columns Identical),1
+Public_S4A_UK_Liverpool_Students,Public Study,Not Related to Main Topic (Exam-Cheating Items Only; Missing Responsible Self-Regulation),189
+Public_S4A_UK_Liverpool_Students,Public Study,Failed Embedded Survey Attention Check (AttentionCheckPass = 0),41
+Public_S4A_UK_Liverpool_Students,Public Study,Incomplete Questionnaire / Early Drop-out (Missing Usage & Awareness),27
+Public_S4B_UK_Liverpool_Staff,Public Study,Not Related to Main Topic (Staff Grading & Plagiarism Checklist Only),92
+Public_S4B_UK_Liverpool_Staff,Public Study,Incomplete Questionnaire / Early Drop-out (All Core Items Null),36

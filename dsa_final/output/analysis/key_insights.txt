@@ -1,0 +1,96 @@
+================================================================================================
+TOPIC-ALIGNED UNIFIED DATASET ANALYTICS REPORT (BASIS: `main_dataset.csv` & `docs/`)
+Study: AI and the Environment: An Analysis of Public Awareness (Azul, de la Cruz, Galvez - BSIT 3B)
+================================================================================================
+Unified Dataset Raw Rows Integrated      : 3,766 rows
+Unified Dataset Cleaned Topic-Valid Rows : 2,842 rows (75.46% retained)
+Unified Dataset Total Rows Lost/Removed  : 924 rows (24.54% removed)
+Main Study (`main_dataset.csv`) Retention: 72 cleaned / 84 raw rows (12 rows removed = 14.29%)
+50% Stratified Sample Rows               : 1,454 rows
+Topic-Valid Open-Ended Answers           : Q7 Concerns = 123 rows | Q8 Solutions = 151 rows
+Correlation (Awareness_Index vs Behavior_Index): r = +0.7728 (Unified Dataset, N = 2,842)
+
+1. HOW MANY ROWS WERE LOST / REMOVED AS UNRELATED IN EACH STUDY AND WHY (SUMMARY):
+                     source_study      study_role  raw_rows  cleaned_rows  rows_lost  cleaned_pct  lost_pct                                                                                                                                                                                                                                           why_rows_lost
+      Main_Study_PH_Env_Awareness Main Study (PH)        84            72         12        85.71     14.29                               Not Related to Main Topic (Off-Topic Q7: Hacking, Privacy, or AGI Instead of Environment) (n=7); Missing Mandatory Open-Ended Q7 & Q8 (Both Blank) (n=4); Non-Substantive Open-Ended Q7 & Q8 (Placeholder '.' Only) (n=1)
+Public_S2_BD_Cognitive_Dependence    Public Study      2613          2087        526        79.87     20.13                                                                                                            Exact Duplicate Respondent Record (All 30 Columns Identical) (n=451); Invalid Straight-Line Uniform Response (All 25 Items Identical) (n=75)
+Public_S3_UTAUT_Responsible_GenAI    Public Study       400           399          1        99.75      0.25                                                                                                                                                                                      Exact Duplicate Respondent Record (All 31 Columns Identical) (n=1)
+ Public_S4A_UK_Liverpool_Students    Public Study       519           262        257        50.48     49.52 Not Related to Main Topic (Exam-Cheating Items Only; Missing Responsible Self-Regulation) (n=189); Failed Embedded Survey Attention Check (AttentionCheckPass = 0) (n=41); Incomplete Questionnaire / Early Drop-out (Missing Usage & Awareness) (n=27)
+    Public_S4B_UK_Liverpool_Staff    Public Study       150            22        128        14.67     85.33                                                                                                    Not Related to Main Topic (Staff Grading & Plagiarism Checklist Only) (n=92); Incomplete Questionnaire / Early Drop-out (All Core Items Null) (n=36)
+
+2. EXACT BREAKDOWN OF WHY ROWS WERE LOST OR REMOVED PER STUDY:
+                     source_study      study_role                                                                            invalid_reason  rows_lost_for_reason
+      Main_Study_PH_Env_Awareness Main Study (PH) Not Related to Main Topic (Off-Topic Q7: Hacking, Privacy, or AGI Instead of Environment)                     7
+      Main_Study_PH_Env_Awareness Main Study (PH)                                         Missing Mandatory Open-Ended Q7 & Q8 (Both Blank)                     4
+      Main_Study_PH_Env_Awareness Main Study (PH)                                 Non-Substantive Open-Ended Q7 & Q8 (Placeholder '.' Only)                     1
+Public_S2_BD_Cognitive_Dependence    Public Study                              Exact Duplicate Respondent Record (All 30 Columns Identical)                   451
+Public_S2_BD_Cognitive_Dependence    Public Study                           Invalid Straight-Line Uniform Response (All 25 Items Identical)                    75
+Public_S3_UTAUT_Responsible_GenAI    Public Study                              Exact Duplicate Respondent Record (All 31 Columns Identical)                     1
+ Public_S4A_UK_Liverpool_Students    Public Study Not Related to Main Topic (Exam-Cheating Items Only; Missing Responsible Self-Regulation)                   189
+ Public_S4A_UK_Liverpool_Students    Public Study                           Failed Embedded Survey Attention Check (AttentionCheckPass = 0)                    41
+ Public_S4A_UK_Liverpool_Students    Public Study                     Incomplete Questionnaire / Early Drop-out (Missing Usage & Awareness)                    27
+    Public_S4B_UK_Liverpool_Staff    Public Study                     Not Related to Main Topic (Staff Grading & Plagiarism Checklist Only)                    92
+    Public_S4B_UK_Liverpool_Staff    Public Study                           Incomplete Questionnaire / Early Drop-out (All Core Items Null)                    36
+
+3. UNIFIED DATASET ITEM & INDEX MEANS BY STUDY (Q2 TO Q6, AWARENESS, BEHAVIOR, GAP):
+                     source_study      study_role  n_cleaned  mean_q2_usage  mean_q3_energy_aware  mean_q4_carbon_aware  mean_q5_consider_impact  mean_q6_avoid_unnecessary  mean_Awareness_Index  mean_Behavior_Index  mean_Gap
+      Main_Study_PH_Env_Awareness Main Study (PH)         72          3.736                 3.917                 4.042                    3.625                      4.111                 3.979                3.868     0.111
+Public_S2_BD_Cognitive_Dependence    Public Study       2087          3.778                 2.295                 2.287                    2.302                      2.323                 2.291                2.313    -0.022
+Public_S3_UTAUT_Responsible_GenAI    Public Study        399          3.943                 3.895                 3.947                    3.516                      3.655                 3.921                3.585     0.336
+ Public_S4A_UK_Liverpool_Students    Public Study        262          3.080                 3.762                 3.699                    3.836                      4.003                 3.730                3.920    -0.189
+    Public_S4B_UK_Liverpool_Staff    Public Study         22          2.227                 3.477                 2.727                    4.045                      3.989                 3.102                4.017    -0.915
+
+4. ANALYSIS 1 — DESCRIPTIVE STATISTICS (UNIFIED DATASET):
+              variable    n  mean   sd  median   min  max
+        aware_energy_n 2842  2.70 1.06    2.67  1.00 5.00
+        aware_carbon_n 2842  2.70 1.05    2.55  1.00 5.00
+     consider_impact_n 2842  2.66 0.94    2.40  1.00 5.00
+           avoid_use_n 2842  2.72 0.93    2.40  1.00 5.00
+          usage_freq_n 2842  3.72 0.71    3.80  1.00 5.00
+       Awareness_Index 2842  2.70 0.99    2.50  1.00 5.00
+        Behavior_Index 2842  2.69 0.89    2.40  1.00 5.00
+Awareness_Behavior_Gap 2842  0.01 0.64    0.00 -2.21 2.74
+
+5. ANALYSIS 2 — LIKERT RESPONSE DISTRIBUTION (UNIFIED DATASET):
+                                   item  Strongly Disagree  Disagree  Neutral  Agree  Strongly Agree  pct_agree  pct_disagree
+      Aware AI uses lots of energy (Q3)                320      1081      683    510             248       26.7          49.3
+  Aware data centers add emissions (Q4)                322      1079      712    559             170       25.7          49.3
+Consider env. impact when using AI (Q5)                226      1271      728    456             161       21.7          52.7
+          Avoid unnecessary AI use (Q6)                114      1318      835    388             187       20.2          50.4
+
+6. ANALYSIS 3 — AWARENESS-TO-BEHAVIOR GAP TYPOLOGY:
+               gap_type  count  pct
+                Aligned   2522 88.7
+   Aware but not acting    195  6.9
+Acting beyond awareness    125  4.4
+
+7. ANALYSIS 4 — INDEX BREAKDOWN BY AI USAGE FREQUENCY SEGMENT:
+    usage_segment    n  mean_awareness  mean_behavior  mean_gap  sd_behavior
+   Light (rarely)   58            3.54           3.82     -0.28         0.87
+Moderate (weekly)  875            2.72           2.72      0.00         0.86
+   Heavy (daily+) 1909            2.67           2.65      0.02         0.88
+
+8. ANALYSIS 5 — PEARSON CORRELATIONS (UNIFIED DATASET):
+            var_1             var_2  pearson_r
+   aware_energy_n    aware_carbon_n     0.7471
+  Awareness_Index    Behavior_Index     0.7728
+consider_impact_n       avoid_use_n     0.8048
+     usage_freq_n   Awareness_Index    -0.0568
+     usage_freq_n    Behavior_Index    -0.1050
+   aware_energy_n consider_impact_n     0.7406
+   aware_carbon_n       avoid_use_n     0.6403
+
+9. ANALYSIS 6 — OPEN-ENDED ENVIRONMENTAL CONCERNS (Q7) & SOLUTIONS (Q8):
+   question         theme_col                        theme  mentions  pct_of_answers
+ Q7 concern           c_water         Water use / scarcity        48            39.0
+ Q7 concern          c_energy     Energy / electricity use        30            24.4
+ Q7 concern          c_carbon Carbon / climate / pollution        24            19.5
+ Q7 concern          c_ewaste          E-waste / resources        14            11.4
+ Q7 concern      c_noise_heat                 Noise / heat         9             7.3
+ Q7 concern       c_ecosystem      Ecosystem / land impact         8             6.5
+Q8 solution       s_education         Education & training        58            38.4
+Q8 solution s_responsible_use    Responsible / mindful use        43            28.5
+Q8 solution        s_campaign  Awareness campaigns / media        33            21.9
+Q8 solution          s_policy          Policy / regulation        19            12.6
+Q8 solution    s_transparency     Transparency / reporting         9             6.0
+Q8 solution            s_tech   Efficient / renewable tech         3             2.0

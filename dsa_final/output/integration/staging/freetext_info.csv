@@ -1,0 +1,7 @@
+Item,Details
+RedactionApplied,1 indicates that one or more potentially identifying/sensitive sentences were removed from that response; 0 indicates no sentence-level redaction.
+Fields omitted entirely,Student: source of guidance and descriptions of AI-allowed/prohibited assessments. Staff: descriptions of assignments/tasks where AI was allowed/prohibited.
+Sentence-level removals,"Sentences were removed where they contained health/disability disclosure, institution-specific internal tool/module detail, staff discipline/role information, exact misconduct case counts, direct contact details, or a personal occupation that could facilitate recognition."
+Text preservation,"Remaining text has not been corrected for spelling, grammar, or style."
+Student responses retained,925
+Staff responses retained,98
