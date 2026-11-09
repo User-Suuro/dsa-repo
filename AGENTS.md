@@ -15,11 +15,11 @@ Monorepo of Python and PySpark data engineering, survey NLP, statistical analyti
 ## Setup and Commands
 ```powershell
 # Run the dsa_final 5-stage pipeline using its dedicated virtual environment
-.\dsa_final\.venv\Scripts\python.exe dsa_final\output\01_data_integration.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\output\02_data_cleansing.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\output\03_data_transformation.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\output\04_data_reduction.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\output\05_data_analysis_and_visualization.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\01_data_integration.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\02_data_cleansing.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\03_data_transformation.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\04_data_reduction.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\05_data_analysis_and_visualization.py
 ```
 
 ## Boundaries and Gotchas
