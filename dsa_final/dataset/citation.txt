@@ -1,0 +1,8 @@
+
+Arifen, R., Rahman, M. K. M., & Khandakar, S. (2026). Dataset on cognitive dependence on generative AI tools among Bangladeshi university students (Version 2) [Data set]. Mendeley Data. https://doi.org/10.17632/7m94b7yr8w.2
+
+Hands, C., Saunders, S., Ellison, C., & Barnicoat, R. (2026). Changing patterns of generative AI use, acceptable practice and institutional guidance in higher education (Version v1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23118843
+
+Hartmann, P. (2026). Survey data on artificial intelligence use, awareness of AI’s environmental impact, climate anxiety and pro-climate behavioural intentions (Version 1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.22035722
+
+Lee, D. M., & Legowo, N. (2026). Factors affecting responsible generative AI use among university students (Version v1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.23295852
