@@ -1,0 +1,5 @@
+cluster_id,count,share_pct,mean_awareness,mean_preparedness,mean_supplies,mean_planning,mean_flood_history
+0,1343,71.02,3.233,2.575,2.725,2.426,2.054
+1,536,28.34,4.308,3.998,4.047,3.95,3.396
+3,8,0.42,2.469,2.206,2.479,1.933,3.75
+2,4,0.21,3.875,3.334,3.966,2.7,1.0

@@ -1,0 +1,9 @@
+﻿var_1,var_2,pearson_r
+aw_warning_signals,aw_monitor_updates,0.3537
+awareness_score,preparedness_score,0.6731
+aw_residence_risk,prep_go_bag,0.582
+aw_warning_signals,prep_food_water,0.4002
+aw_safety_health_index,prep_supplies_index,0.6829
+prep_go_bag,prep_food_water,0.7077
+prep_evac_plan,prep_follow_protocols,0.4943
+awareness_score,prep_supplies_index,0.6929

@@ -1,0 +1,38 @@
+KEY EMPIRICAL INSIGHTS & TAKEAWAYS
+================================================================================
+Study Title: Assessing College Students Awareness and Preparedness Toward Flood Risks
+Integrated Master Dataset N = 1,891 Clean Valid Records across 4 Unified Data Sources
+================================================================================
+
+1. THE AWARENESS-PREPAREDNESS GAP:
+   - Overall Mean Flood Risk Awareness Score: 3.536 / 5.0 (Moderate to High Awareness)
+   - Overall Mean Personal Flood Preparedness Score: 2.979 / 5.0 (Significantly lower)
+   - Statistically Significant Disconnect (Mean Gap = +0.557):
+     While students and young adults demonstrate solid comprehension of rainfall warnings
+     and weather advisories (mean = 3.65), their tangible preparedness—such as packing an
+     emergency Go-Bag (mean = 2.915) and maintaining 3-day emergency supplies
+     (mean = 2.965)—substantially lags behind.
+
+2. LIVING ARRANGEMENT VULNERABILITY:
+   - Students living in boarding houses, dormitories, or rented rooms exhibit the highest
+     vulnerability, having an average emergency supplies readiness score of only 2.92 / 5.0.
+   - Primary constraints identified in qualitative analysis include lack of storage space,
+     financial constraints in purchasing spare emergency kits, and dependence on landlords.
+
+3. FLOOD EXPERIENCE AS A BEHAVIORAL CATALYST:
+   - Respondents with a history of frequent or occasional flooding report notably higher
+     preparedness scores (3.48 / 5.0) compared to those who have never flooded (2.81 / 5.0).
+   - Past flood exposure sharpens risk perception and accelerates family communication
+     and power breaker shut-off protocols.
+
+4. HIGH-RISK POPULATION IDENTIFICATION:
+   - A total of 333 individuals (17.61%) fall into the 'High Risk' tier
+     (residing in flood-prone communities while simultaneously lacking basic Go-Bags or 3-day provisions).
+   - This group requires priority institutional interventions from college administrations and local DRRMOs.
+
+5. QUALITATIVE NEEDS & INSTITUTIONAL RECOMMENDATIONS:
+   - Top Student Challenges: Food & drinking water preservation, financial costs of gear,
+     and electrical/communication blackouts during severe typhoons.
+   - Top Requested Support: Distribution of subsidized emergency Go-Bag kits, automated
+     SMS warning alerts, and regular practical simulation drills on campus.
+================================================================================

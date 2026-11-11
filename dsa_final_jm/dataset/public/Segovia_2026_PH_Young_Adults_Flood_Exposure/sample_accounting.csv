@@ -1,0 +1,11 @@
+Stage,n,pct
+Responses in combined export,541,100
+Excluded: blank on all scale items,8,1.5
+Excluded: age outside 18-29,0,0
+Excluded: no consent / not willing,1,0.2
+Eligible for quality screening,532,98.3
+Excluded: two or more scale blocks flat-lined,82,15.2
+"Excluded: other quality flags, not recovered",80,14.8
+Retained: passed all quality indicators,324,59.9
+"Retained: single flat block on uniform-valence scale, recovered",46,8.5
+ANALYTIC SAMPLE (Tier A),370,68.4

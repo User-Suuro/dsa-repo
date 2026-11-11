@@ -1,0 +1,2 @@
+model,chosen_k,chosen_k_accuracy,optimal_k,optimal_k_accuracy
+K-Nearest Neighbors (KNN),5,0.6617,13,0.6765

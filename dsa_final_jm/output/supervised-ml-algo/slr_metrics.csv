@@ -1,0 +1,2 @@
+model,predictor,target,slope,intercept,r2,rmse,mae
+Simple Linear Regression (SLR),awareness_score,preparedness_score,0.7117,0.4592,0.4498,0.571,0.4756

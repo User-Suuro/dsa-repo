@@ -1,0 +1,104 @@
+variable,label,type,values,notes,in_analytic_370,in_screened_541
+AM1,Anticipatory Mobility Scale item 1,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM10,Anticipatory Mobility Scale item 10,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM11,Anticipatory Mobility Scale item 11,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM12,Anticipatory Mobility Scale item 12,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM13,Anticipatory Mobility Scale item 13,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM14,Anticipatory Mobility Scale item 14,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM15,Anticipatory Mobility Scale item 15,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM2,Anticipatory Mobility Scale item 2,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM3,Anticipatory Mobility Scale item 3,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM4,Anticipatory Mobility Scale item 4,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM5,Anticipatory Mobility Scale item 5,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM6,Anticipatory Mobility Scale item 6,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM7,Anticipatory Mobility Scale item 7,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM8,Anticipatory Mobility Scale item 8,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM9,Anticipatory Mobility Scale item 9,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. Item wording in the article's Supplementary Material.",1,1
+AM_total,Anticipatory Mobility Scale score,numeric,1-5,Mean of AM1-AM15.,1,0
+D1,DASS-21 item 1,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D10,DASS-21 item 10,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D11,DASS-21 item 11,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D12,DASS-21 item 12,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D13,DASS-21 item 13,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D14,DASS-21 item 14,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D15,DASS-21 item 15,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D16,DASS-21 item 16,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D17,DASS-21 item 17,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D18,DASS-21 item 18,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D19,DASS-21 item 19,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D2,DASS-21 item 2,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D20,DASS-21 item 20,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D21,DASS-21 item 21,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D3,DASS-21 item 3,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D4,DASS-21 item 4,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D5,DASS-21 item 5,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D6,DASS-21 item 6,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D7,DASS-21 item 7,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D8,DASS-21 item 8,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+D9,DASS-21 item 9,numeric,0-3,"0 = did not apply to me at all, 3 = applied to me very much or most of the time. Item wording in Lovibond & Lovibond (1995).",1,1
+DASS_anx,DASS-21 Anxiety,numeric,0-42,"2 x sum of D2, D4, D7, D9, D15, D19, D20.",1,0
+DASS_dep,DASS-21 Depression,numeric,0-42,"2 x sum of D3, D5, D10, D13, D16, D17, D21.",1,0
+DASS_str,DASS-21 Stress,numeric,0-42,"2 x sum of D1, D6, D8, D11, D12, D14, D18.",1,0
+P1,Perceived Stress Scale item 1,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P10,Perceived Stress Scale item 10,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P2,Perceived Stress Scale item 2,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P3,Perceived Stress Scale item 3,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P4,Perceived Stress Scale item 4,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P5,Perceived Stress Scale item 5,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P6,Perceived Stress Scale item 6,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P7,Perceived Stress Scale item 7,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P8,Perceived Stress Scale item 8,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+P9,Perceived Stress Scale item 9,numeric,0-4,"0 = never, 4 = very often. As administered, not reverse-scored. Item wording in Cohen & Williamson (1988).",1,1
+PA1,Place Attachment Inventory item 1,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA10,Place Attachment Inventory item 10,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA11,Place Attachment Inventory item 11,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA12,Place Attachment Inventory item 12,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA2,Place Attachment Inventory item 2,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA3,Place Attachment Inventory item 3,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA4,Place Attachment Inventory item 4,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA5,Place Attachment Inventory item 5,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA6,Place Attachment Inventory item 6,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA7,Place Attachment Inventory item 7,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA8,Place Attachment Inventory item 8,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA9,Place Attachment Inventory item 9,numeric,1-5,"1 = strongly disagree, 5 = strongly agree. PA1-PA6 place identity, PA7-PA12 place dependence. Item wording in Williams & Vaske (2003).",1,1
+PA_total,Place Attachment Inventory score,numeric,1-5,Mean of PA1-PA12.,1,0
+PSS10,"Perceived Stress Scale, 10-item total",numeric,0-40,"Sum of P1, P2, P3, P6, P9, P10 and reverse-scored R4, R5, R7, R8.",1,0
+PSS_neg6,"Perceived Stress Scale, negatively worded 6-item score",numeric,0-24,"Sum of P1, P2, P3, P6, P9, P10. Primary perceived-stress measure in the article.",1,0
+R4,"PSS item 4, reverse-scored",numeric,0-4,Computed as 4 - P4.,1,0
+R5,"PSS item 5, reverse-scored",numeric,0-4,Computed as 4 - P5.,1,0
+R7,"PSS item 7, reverse-scored",numeric,0-4,Computed as 4 - P7.,1,0
+R8,"PSS item 8, reverse-scored",numeric,0-4,Computed as 4 - P8.,1,0
+age,Age in years,numeric,18-29,Self-reported.,1,1
+age_elig,Age eligibility (18-29),string,Yes / No,Self-reported eligibility screener (age 18-29). Yes in the analytic file. data_screened_541.csv retains 1 response recorded No whose reported age was nonetheless 18; the declared screener answer was honoured and the response excluded (see README.txt).,1,1
+carried,Carried forward into the screening stage,boolean,True / False,,1,1
+community,Community of residence,string,Bulacan / Malabon / Marikina / Navotas / Nueva Ecija / Pampanga / Pasig,Site label as reported; see README on label resolution.,1,1
+complete,All four scale blocks complete,boolean,True / False,,1,1
+consent,Informed consent affirmed,string,Yes / No,"Yes in the analytic file, where non-consenting responses are absent. data_screened_541.csv retains 1 response recorded No.",1,1
+dup_group_size,Size of identical-response-pattern group,integer,>=1,1 = response pattern unique in the dataset.,1,1
+eligible,Met consent and age eligibility,boolean,True / False,,1,1
+evacuated,Previously evacuated,string,Yes / No,,1,1
+even_odd_r,Even-odd consistency correlation,numeric,-1 to 1,Split-half consistency index.,1,1
+even_odd_z,"Even-odd consistency, Fisher z",numeric,,,1,1
+female,Sex indicator,integer,"0 = Male, 1 = Female",Derived from sex.,1,1
+flag,Data-quality classification,string,clean / incomplete / invalid / suspect,"Values are as recorded by the screening pipeline. The associated article calls the 'suspect' tier ""flagged responding""; the two terms denote the same responses. See README.txt.",1,1
+flood_freq,"Flood experience frequency in community, past 3 years",numeric,1-5,"1 = never/once, 5 = more than 5 times; ordinal.",1,1
+flooded,Personally experienced flooding,string,Yes / No,,1,1
+in_analytic_sample,Included in the n = 370 analytic sample,integer,0 / 1,Present in data_screened_541.csv only.,0,1
+irv,Intra-individual response variability,numeric,>=0,SD of a response's answers across all items.,1,1
+longstring_AM,"Longest run of identical consecutive responses, AM items",numeric,>=1,Careless-response index.,1,1
+longstring_all,"Longest run of identical consecutive responses, all items",numeric,>=1,Careless-response index.,1,1
+mahal,Mahalanobis distance across item responses,numeric,>=0,Multivariate outlier index.,1,1
+mahal_p,p-value for Mahalanobis distance,numeric,0-1,,1,1
+mobility_group,Mobility status group,string,Stayer / Planner / CircularMover,Stayer = no plan and no displacement history; Planner = plan or intention to leave; CircularMover = temporary displacement with return.,1,0
+moving_plan,Plan or intention to leave the community,string,Yes / Unsure / No,,1,1
+n_flat_blocks,Number of scale blocks answered with zero variance,integer,0-4,"Blocks: AM, DASS-21, Place Attachment, PSS.",1,1
+prop_extreme_dass,"Proportion of extreme endpoints used, DASS items",numeric,0-1,,1,1
+prop_extreme_lik,"Proportion of extreme endpoints used, Likert (1-5) items",numeric,0-1,,1,1
+row,Response identifier,integer,1-541,Sequential identifier assigned at export; carries no link to any personal identifier.,1,1
+sd_AM,SD of AM item responses,numeric,>=0,,1,1
+sd_DASS,SD of DASS item responses,numeric,>=0,,1,1
+sd_PA,SD of Place Attachment item responses,numeric,>=0,,1,1
+sd_PSS,SD of PSS item responses,numeric,>=0,,1,1
+sex,Sex,string,Female / Male,,1,1
+tierA,Passed the primary quality screen,boolean,True / False,,1,1
+willing,Willing to participate voluntarily,string,Yes / No,"Yes in the analytic file. data_screened_541.csv retains 8 responses recorded No, all of which were blank on every scale item.",1,1

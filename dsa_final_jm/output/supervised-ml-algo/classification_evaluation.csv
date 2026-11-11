@@ -1,0 +1,5 @@
+model,accuracy,hyperparameters
+Decision Tree Classifier,0.7104,"max_depth=3, criterion=gini"
+K-Nearest Neighbors (KNN),0.6617,"k=5, metric=euclidean"
+Gaussian Naive Bayes,0.6596,"Gaussian prior, zero variance smoothing"
+Support Vector Machine (SVM),0.6808,"kernel=rbf, C=1.0, scaled features"

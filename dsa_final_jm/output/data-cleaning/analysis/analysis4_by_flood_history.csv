@@ -1,0 +1,5 @@
+﻿flood_history,n,mean_awareness,mean_preparedness,mean_supplies,mean_gap,sd_preparedness
+Frequently flooded,457,3.938,3.511,3.623,0.426,0.835
+Rarely flooded,71,3.634,3.487,3.373,0.147,0.937
+Occasionally flooded,640,3.6,2.798,3.12,0.802,0.797
+Never flooded,723,3.216,2.752,2.728,0.464,0.488

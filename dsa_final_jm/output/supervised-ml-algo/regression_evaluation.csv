@@ -1,0 +1,3 @@
+model,predictors,target,r2,rmse,mae
+Simple Linear Regression (SLR),awareness_score,preparedness_score,0.4498,0.571,0.4756
+Multiple Linear Regression (MLR),"6 Domain Predictors (Hazards, Warnings, Experience, Constraints)",preparedness_score,0.482,0.5541,0.4621

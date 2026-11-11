@@ -1,0 +1,46 @@
+# Dataset Citations & Public Data Inventory
+
+## Primary Study (Current Residence College Students Survey)
+- **Title**: Assessing College Students Awareness and Preparedness Toward Flood Risks
+- **Authors**: John Mark Pardo, Byron Boral, Aerold Steven Reyes (Group 11 - Skywalker)
+- **Institution**: Camarines Norte State College / Local College, Philippines
+- **Sample Size**: 128 student respondents
+- **File**: `dataset/Assessing College Students Awareness and Preparedness Toward Flood Risks.csv`
+
+---
+
+## Public Study 1 (LGU Disaster Management & Mitigation)
+- **Title**: Data from a survey of the Philippines' local governments on their risk management strategies to natural disasters
+- **Authors**: Majah-Leah V. Ravago, Claire Dennis S. Mapa, Jun Carlo Sunglao, Angelie Grace Aycardo
+- **Year**: 2020
+- **Journal**: *Data in Brief*, Volume 33, 106548
+- **DOI**: [10.1016/j.dib.2020.106548](https://doi.org/10.1016/j.dib.2020.106548)
+- **Mendeley Data DOI**: [10.17632/9y2yhw45zt.1](https://doi.org/10.17632/9y2yhw45zt.1)
+- **Sample Size**: 193 Municipalities/LGUs across 47 Philippine provinces
+- **Directory**: `dataset/public/Supplementary Appendix B DIB Ravago et al 2020/`
+
+---
+
+## Public Study 2 (Philippine Young Adults Flood Exposure & Evacuation Mobility)
+- **Title**: Anticipatory mobility, psychological distress, and flood exposure among young adults in seven flood-prone communities in Metro Manila and Central Luzon, Philippines
+- **Authors**: Adrian M. Segovia, Joy R. Tungol
+- **Year**: 2026
+- **Institution**: Centro Escolar University, Manila, Philippines
+- **Repository**: Mendeley Data
+- **DOI**: [10.17632/462nvdfvjj.1](https://doi.org/10.17632/462nvdfvjj.1)
+- **Sample Size**: 541 raw / 370 clean young adult respondents (Mean age: 21.0 years, ages 18–29)
+- **Key Variables**: Flood exposure history (`flooded`), flood frequency (`flood_freq`), moving/evacuation readiness (`moving_plan`, `evacuated`), community hazard location (`community`), coping and perceived stress scales (`PSS1..PSS10`, `AM1..AM15`)
+- **Directory**: `dataset/public/Segovia_2026_PH_Young_Adults_Flood_Exposure/`
+
+---
+
+## Public Study 3 (Large-Scale Warning Systems, Risk Perception & Preparedness Survey)
+- **Title**: FL24 (The 2024 Flooding and Society Survey)
+- **Authors / Institutions**: NOAA Weather Program Office (WPO) & Institute for Public Policy Research and Analysis (IPPRA), University of Oklahoma
+- **Year**: 2024
+- **Repository**: Harvard Dataverse (`wxsurvey` collection)
+- **DOI**: [10.7910/DVN/I9751R](https://doi.org/10.7910/DVN/I9751R)
+- **Sample Size**: 1,200 validated clean survey respondents
+- **Key Variables**: Weather advisory reception & warning alerts (`wthr_info_*`, `alert_*`), flood threat level and severity (`flood_risk_*`), personal emergency Go-Bag supplies (`supply_*`), 3-day provisions (`food_water_*`), secure documents, evacuation planning, electricity shutoff protocol, and demographics
+- **Directory**: `dataset/public/FL24_Flooding_and_Society_Survey/`
+

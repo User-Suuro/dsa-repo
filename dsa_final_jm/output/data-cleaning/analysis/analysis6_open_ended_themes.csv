@@ -1,0 +1,11 @@
+﻿theme,frequency,theme_type,pct_of_sample
+c_supplies_food,20.0,Challenge (Q1),1.06
+c_financial_cost,19.0,Challenge (Q1),1.0
+c_evac_access,15.0,Challenge (Q1),0.79
+c_power_comms,7.0,Challenge (Q1),0.37
+c_housing_safety,9.0,Challenge (Q1),0.48
+s_go_bag_kits,23.0,Support Needed (Q2),1.22
+s_early_warning_sms,24.0,Support Needed (Q2),1.27
+s_evac_shelter,12.0,Support Needed (Q2),0.63
+s_drrm_seminars,37.0,Support Needed (Q2),1.96
+s_financial_aid,17.0,Support Needed (Q2),0.9

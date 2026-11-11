@@ -1,0 +1,4 @@
+﻿risk_tier,count,percentage,mean_awareness,mean_preparedness,mean_supplies,mean_planning
+Moderate Risk,1284,67.9,3.59,3.095,3.185,3.004
+High Risk,333,17.61,3.19,2.214,2.377,2.051
+Low Risk / Resilient,274,14.49,3.704,3.365,3.588,3.142

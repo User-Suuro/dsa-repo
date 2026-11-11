@@ -1,0 +1,5 @@
+cluster_id,persona_name,count,share_pct,mean_awareness,mean_preparedness,mean_supplies,mean_planning,mean_flood_history
+0,Aware but Unprepared,564,29.83,3.641,2.572,3.045,2.099,3.257
+1,Resilient Ready Guardians,452,23.9,4.338,4.152,4.086,4.219,3.449
+2,Low-Exposure Learners,526,27.82,3.481,2.843,2.854,2.831,1.059
+3,Vulnerable Novices,349,18.46,2.411,2.321,2.289,2.354,1.891

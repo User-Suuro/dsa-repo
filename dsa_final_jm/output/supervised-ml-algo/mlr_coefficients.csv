@@ -1,0 +1,8 @@
+feature,display_name,coefficient
+aw_warning_index,Warning Alerts & Weather,0.143
+aw_local_hazard_index,Residence Risk & Contacts,0.1098
+aw_safety_health_index,Evacuation & Health Awareness,0.4395
+flood_history_n,Prior Flood Experience,0.0227
+c_supplies_food,Supplies/Food Constraint,0.3691
+c_financial_cost,Financial Constraint,0.462
+intercept,Model Intercept,0.5031

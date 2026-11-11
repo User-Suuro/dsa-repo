@@ -1,0 +1,7 @@
+algorithm,task_type,metric_primary,metric_secondary
+Simple Linear Regression (SLR),Regression,R² = 0.4498,RMSE = 0.5710
+Multiple Linear Regression (MLR),Regression,R² = 0.4820,RMSE = 0.5541
+Decision Tree Classifier,Classification,Accuracy = 71.04%,Max Depth = 3
+K-Nearest Neighbors (KNN),Classification,Accuracy = 66.17%,k = 5 (Optimal k = 13)
+Gaussian Naive Bayes,Classification,Accuracy = 65.96%,Prior = Empirical
+Support Vector Machine (SVM),Classification,Accuracy = 68.08%,"Kernel = RBF, C = 1.0"
