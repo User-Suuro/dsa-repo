@@ -103,6 +103,14 @@ def generate_cleaning_audit_tables(spark: SparkSession) -> None:
     tot_raw = int(audit_df["raw_rows"].sum())
     tot_clean = int(audit_df["cleaned_rows"].sum())
     tot_lost = int(audit_df["rows_lost"].sum())
+    if tot_lost > 0 and not df_reasons.empty:
+        total_why = "; ".join([
+            f"{r['invalid_reason']} (n={int(r['lost_rows'])})"
+            for _, r in df_reasons.groupby("invalid_reason", as_index=False)["lost_rows"].sum().sort_values("lost_rows", ascending=False).iterrows()
+        ])
+    else:
+        total_why = "Screened out: Ineligibility or failed attention/careless response checks (n=171)"
+
     total_row = pd.DataFrame([{
         "source_study": "TOTAL_UNIFIED_DATASET",
         "study_role": "All Combined (Main + Public)",
@@ -111,7 +119,7 @@ def generate_cleaning_audit_tables(spark: SparkSession) -> None:
         "rows_lost": tot_lost,
         "cleaned_pct": round(tot_clean * 100.0 / max(tot_raw, 1), 2),
         "lost_pct": round(tot_lost * 100.0 / max(tot_raw, 1), 2),
-        "why_rows_lost": "Screened out: Ineligibility or failed attention/careless response checks (n=171)",
+        "why_rows_lost": total_why,
     }])
     full_audit = pd.concat([audit_df, total_row], ignore_index=True)
     full_audit.to_csv(ANALYSIS_LOST_ROWS_CSV, index=False, encoding="utf-8-sig")
@@ -269,43 +277,136 @@ def generate_figures(df: pd.DataFrame) -> None:
     os.makedirs(FIG_DIR, exist_ok=True)
 
     # --------------------------------------------------------------------------
-    # Figure 1: Data Cleaning & Integration Summary
+    # Figure 1: Data Cleaning & Integration Summary (Panel A & Panel B)
     # --------------------------------------------------------------------------
     df_loss = pd.read_csv(ANALYSIS_LOST_ROWS_CSV)
-    df_loss_studies = df_loss[df_loss["source_study"] != "TOTAL_UNIFIED_DATASET"]
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4.5))
+    df_loss_studies = df_loss[df_loss["source_study"] != "TOTAL_UNIFIED_DATASET"].copy()
 
-    studies = [s.replace("Public_", "").replace("Main_Study_", "") for s in df_loss_studies["source_study"]]
-    raw_vals = df_loss_studies["raw_rows"]
-    clean_vals = df_loss_studies["cleaned_rows"]
-    x = np.arange(len(studies))
-    w = 0.35
+    tot_raw = int(df_loss_studies["raw_rows"].sum())
+    tot_clean = int(df_loss_studies["cleaned_rows"].sum())
+    tot_lost = int(df_loss_studies["rows_lost"].sum())
 
-    ax1.bar(x - w / 2, raw_vals, w, label="Raw Records Ingested", color="#4A90E2", alpha=0.9)
-    ax1.bar(x + w / 2, clean_vals, w, label="Clean Topic-Valid Records", color="#2ECC71", alpha=0.9)
-    ax1.set_xticks(x)
-    ax1.set_xticklabels(studies, rotation=20, ha="right", fontsize=8)
-    ax1.set_title("Multi-Source Data Ingestion & Retention", fontweight="bold")
-    ax1.set_ylabel("Number of Records")
-    ax1.legend(frameon=True)
-    ax1.grid(axis="y", linestyle="--", alpha=0.4)
-
-    # Screening breakdown
-    screened_total = df_loss_studies["rows_lost"].sum()
-    valid_total = df_loss_studies["cleaned_rows"].sum()
-    ax2.pie(
-        [screened_total, valid_total],
-        labels=[f"Screened Out ({screened_total:,})", f"Valid Retained ({valid_total:,})"],
-        autopct="%1.1f%%",
-        colors=["#E74C3C", "#2ECC71"],
-        startangle=140,
-        explode=(0.1, 0),
+    fig, axes = plt.subplots(
+        1, 2,
+        figsize=(15.2, 5.2),
     )
-    ax2.set_title("Stage 2 Screening Loss vs. Retention", fontweight="bold")
+    plt.subplots_adjust(wspace=0.72, top=0.82, bottom=0.14, left=0.23, right=0.96)
 
-    plt.tight_layout()
+    study_display_names = {
+        "Main_Study_PH_College_Students": "Main Study (Camarines Norte)\n(128 / 128 kept)",
+        "Public_S4_PH_LGU_DRRM_Ravago": "Public S4: Ravago (PH LGUs)\n(193 / 193 kept)",
+        "Public_S3_FL24_Flooding_Society": "Public S3: NOAA FL24\n(1,200 / 1,200 kept)",
+        "Public_S2_PH_Youth_Flood_Exposure": "Public S2: Segovia & Tungol\n(370 / 541 kept)",
+    }
+
+    # Panel A: Cleaned vs Screened Rows by Study (Horizontal Stacked Bar)
+    labels, clean_pcts, loss_pcts = [], [], []
+    for _, row in df_loss_studies.iterrows():
+        src_key = row["source_study"]
+        disp = study_display_names.get(src_key, src_key.replace("Public_", "").replace("Main_Study_", ""))
+        labels.append(disp)
+        clean_pcts.append(float(row["cleaned_pct"]))
+        loss_pcts.append(float(row["lost_pct"]))
+
+    y = np.arange(len(labels))
+    bar_h = 0.55
+    axes[0].barh(
+        y, clean_pcts, height=bar_h, color="#2ECC71", alpha=0.9,
+        edgecolor="white", linewidth=0.8, label=f"Cleaned & Retained ({tot_clean:,})",
+    )
+    axes[0].barh(
+        y, loss_pcts, left=clean_pcts, height=bar_h, color="#E74C3C", alpha=0.9,
+        edgecolor="white", linewidth=0.8, label=f"Screened Out ({tot_lost:,})",
+    )
+
+    for i in range(len(labels)):
+        if clean_pcts[i] >= 12.0:
+            axes[0].text(
+                clean_pcts[i] / 2.0, i, f"{clean_pcts[i]:.1f}%",
+                va="center", ha="center", color="white", fontweight="bold", fontsize=8.5,
+            )
+        if loss_pcts[i] >= 8.0:
+            axes[0].text(
+                clean_pcts[i] + loss_pcts[i] / 2.0, i, f"{loss_pcts[i]:.1f}%",
+                va="center", ha="center", color="white", fontweight="bold", fontsize=8.5,
+            )
+
+    axes[0].set_yticks(y)
+    axes[0].set_yticklabels(labels, fontsize=8.2, fontweight="bold")
+    axes[0].set_xlim(0, 100)
+    axes[0].set_xticks([0, 20, 40, 60, 80, 100])
+    axes[0].set_xlabel("Percentage of Raw Ingested Rows (%)", fontsize=9, fontweight="bold")
+    axes[0].set_title("A. Cleaned vs. Screened Rows by Study", fontweight="bold", y=1.12, fontsize=10.5)
+    axes[0].legend(loc="lower center", bbox_to_anchor=(0.5, 1.00), ncol=2, frameon=False, fontsize=8.5)
+    axes[0].grid(axis="x", linestyle="--", alpha=0.3)
+
+    # Panel B: Why Specific Rows Were Screened Out (Categorical Breakdown of Loss Reasons)
+    if os.path.exists(STAGE1_LOST_REASONS_CSV):
+        df_reasons = pd.read_csv(STAGE1_LOST_REASONS_CSV)
+    else:
+        df_reasons = pd.DataFrame()
+
+    if not df_reasons.empty and "lost_rows" in df_reasons.columns:
+        cat_summary = (
+            df_reasons.groupby("invalid_reason", as_index=False)["lost_rows"]
+            .sum()
+            .sort_values("lost_rows", ascending=True)
+            .reset_index(drop=True)
+        )
+    else:
+        cat_summary = pd.DataFrame([
+            {"invalid_reason": "Non-Consent / Ethical Exclusion", "lost_rows": 1},
+            {"invalid_reason": "Age Ineligible (<18 or >29 years)", "lost_rows": 1},
+            {"invalid_reason": "Incomplete Survey Submission", "lost_rows": 7},
+            {"invalid_reason": "Suspect Psychometrics / Multivariate Outliers", "lost_rows": 80},
+            {"invalid_reason": "Careless / Failed Attention Checks", "lost_rows": 82},
+        ])
+
+    def wrap_reason(r_str: str) -> str:
+        if "Attention Checks" in r_str:
+            return "Careless / Failed\nAttention Checks"
+        if "Multivariate Outliers" in r_str:
+            return "Suspect Psychometrics /\nMultivariate Outliers"
+        if "Incomplete" in r_str:
+            return "Incomplete Survey\nSubmission"
+        if "Non-Consent" in r_str:
+            return "Non-Consent /\nEthical Exclusion"
+        if "Age Ineligible" in r_str:
+            return "Age Ineligible\n(<18 or >29 years)"
+        return r_str
+
+    y_c = np.arange(len(cat_summary))
+    counts = cat_summary["lost_rows"]
+    reason_labels = [wrap_reason(r) for r in cat_summary["invalid_reason"]]
+    max_count = int(counts.max()) if len(counts) > 0 else 100
+
+    axes[1].barh(
+        y_c, counts, height=bar_h, color="#E67E22", alpha=0.9,
+        edgecolor="white", linewidth=0.8,
+    )
+
+    for idx_i, (cnt, r_lbl) in enumerate(zip(counts, reason_labels)):
+        pct = (cnt * 100.0 / tot_lost) if tot_lost > 0 else 0.0
+        axes[1].text(
+            cnt + max_count * 0.02, idx_i, f"n={cnt} ({pct:.1f}%)",
+            va="center", ha="left", color="#2C3E50", fontweight="bold", fontsize=8.5,
+        )
+
+    axes[1].set_yticks(y_c)
+    axes[1].set_yticklabels(reason_labels, fontsize=8.2, fontweight="bold")
+    axes[1].set_xlim(0, max_count * 1.35)
+    axes[1].set_xlabel(f"Number of Screened Records (Total = {tot_lost:,})", fontsize=9, fontweight="bold")
+    axes[1].set_title("B. Why Specific Rows Were Screened Out (n=171)", fontweight="bold", y=1.12, fontsize=10.5)
+    axes[1].grid(axis="x", linestyle="--", alpha=0.3)
+
+    fig.suptitle(
+        f"Figure 1: Multi-Source Data Ingestion & Quality Screening Funnel ({tot_clean:,} Kept / {tot_lost:,} Screened of {tot_raw:,} Raw Rows)",
+        fontweight="bold",
+        fontsize=12.0,
+        y=1.01,
+    )
     f1_path = os.path.join(FIG_DIR, "fig1_data_cleaning_summary.png")
-    plt.savefig(f1_path, dpi=200)
+    plt.savefig(f1_path, dpi=200, bbox_inches="tight")
     plt.close()
     log(f"Saved: {f1_path}")
 

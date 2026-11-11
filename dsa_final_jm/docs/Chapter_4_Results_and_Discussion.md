@@ -37,20 +37,26 @@ Through the PySpark Stage 2 Data Cleansing pipeline, rigorous validation checks 
 | Source Study Identifier | Operational Study Role | Raw Records ($n$) | Clean Records ($n$) | Records Lost ($n$) | Retention Rate (%) | Attrition Reason and Screening Protocol |
 | :--- | :--- | :---: | :---: | :---: | :---: | :--- |
 | **Main_Study_PH_College_Students** | Primary Field Survey (Camarines Norte) | 128 | 128 | 0 | 100.0% | Complete records; zero out-of-range or missing values. |
-| **Public_S2_PH_Youth_Flood_Exposure** | Benchmark Youth Survey (Segovia & Tungol, 2026) | 541 | 370 | 171 | 68.39% | Screened out: ineligibility criteria and failed careless response checks ($n = 171$). |
+| **Public_S2_PH_Youth_Flood_Exposure** | Benchmark Youth Survey (Segovia & Tungol, 2026) | 541 | 370 | 171 | 68.39% | Screened out ($n=171$): Careless / Failed Attention Checks ($n=82$); Suspect Psychometrics / Outliers ($n=80$); Incomplete Submissions ($n=7$); Non-Consent ($n=1$); Age Ineligible ($n=1$). |
 | **Public_S3_FL24_Flooding_Society** | Standardized Community Survey (FL24 Benchmark) | 1,200 | 1,200 | 0 | 100.0% | Pre-standardized public benchmark; zero missing values. |
 | **Public_S4_PH_LGU_DRRM_Ravago** | Local Municipal DRRM Benchmark (Ravago et al., 2020) | 193 | 193 | 0 | 100.0% | Valid municipal disaster records; zero missing values. |
 | **TOTAL UNIFIED MASTER DATASET** | **Harmonized Analytic Corpus** | **2,062** | **1,891** | **171** | **91.71%** | **Overall attrition of 8.29% strictly confined to data hygiene screening.** |
 
 [insert fig1_data_cleaning_summary]  
-*(Insert Figure 1: Data cleaning and harmonization summary across unified sources.)*
+*(Insert Figure 1: Multi-source data ingestion and quality screening funnel detailing reasons for data exclusion.)*
 
 ### Discussion of Figure 1: Attrition Funnel and Multi-Source Retention Dynamics
-Figure 1 illustrates the comparative retention and loss dynamics across the four integrated data sources. 
+Figure 1 illustrates the comparative retention and loss dynamics across the four integrated data sources (Panel A) alongside the granular categorical breakdown of why specific rows were screened out (Panel B). 
 
 Three vital data engineering observations emerge from this visualization:
 1. **Exceptional Integrity in Primary Field Collection**: The primary field survey (`Main_Study_PH_College_Students`, $n = 128$) achieved a **$100.0\%$ retention rate**, reflecting the efficacy of mandatory form field validation and in-person survey administrative oversight in Camarines Norte collegiate classrooms.
-2. **Targeted Quality Screening in Public Secondary Data**: In `Public_S2_PH_Youth_Flood_Exposure` (Segovia & Tungol, 2026), an initial sample of $541$ respondents was subjected to strict attention filtering. Exactly **$171$ entries ($31.61\%$) were pruned** due to failed attention checks (e.g., straight-lining Likert responses across opposing constructs) or non-qualifying age brackets ($< 18$ or $> 30$). Removing these compromised records preserved high internal consistency across the final analytic subset ($n = 370$).
+2. **Granular Quality Screening Breakdown in Public Secondary Data**: Figure 1 (Panel B) dissects why exactly $171$ entries ($31.61\%$) from `Public_S2_PH_Youth_Flood_Exposure` (Segovia & Tungol, 2026) were screened out during Stage 1 and Stage 2:
+   - **Careless / Failed Attention Checks ($n = 82, 47.95\%$)**: Inattentive responding, straightlining across alternating Likert poles, and failed verification checks.
+   - **Suspect Psychometrics / Multivariate Outliers ($n = 80, 46.78\%$)**: Extreme multivariate Mahalanobis distance outliers ($p < 0.001$) and invariant response strings across psychological distress and hazard awareness items.
+   - **Incomplete Survey Submissions ($n = 7, 4.09\%$)**: Abandoned questionnaires lacking complete construct indicators.
+   - **Non-Consent / Ethical Exclusion ($n = 1, 0.58\%$)**: Omission of verified participant consent.
+   - **Age Ineligibility ($n = 1, 0.58\%$)**: Respondent age falling outside the 18–29 target bracket.
+   Eliminating these compromised entries ensured high data hygiene, removing artificial variances prior to machine learning modeling.
 3. **High Net Analytical Yield**: The unified pipeline delivered **$N = 1,891$ clean, fully harmonized records**, representing an overall retention rate of **$91.71\%$**. This massive sample provides robust statistical power, eliminating the extreme standard error and localized bias common in small-scale collegiate research.
 
 ---

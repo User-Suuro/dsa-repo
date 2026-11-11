@@ -272,7 +272,21 @@ def load_segovia_study() -> List[Dict]:
         prep6 = round((_am(9) + _am(10)) / 2.0, 3)  # Electrical safety cutoff
 
         is_valid = 1 if is_analytic else 0
-        inv_reason = None if is_analytic else "Screened out: Ineligibility or failed attention/careless response checks"
+        if is_analytic:
+            inv_reason = None
+        else:
+            if str(r.get("consent", "")).strip().lower() not in ["yes", "1", "true"]:
+                inv_reason = "Non-Consent / Ethical Exclusion"
+            elif str(r.get("age_elig", "")).strip().lower() not in ["yes", "1", "true"]:
+                inv_reason = "Age Ineligible (<18 or >29 years)"
+            elif not bool(r.get("complete", True)):
+                inv_reason = "Incomplete Survey Submission"
+            elif str(r.get("flag", "")).strip().lower() == "invalid":
+                inv_reason = "Careless / Failed Attention Checks"
+            elif str(r.get("flag", "")).strip().lower() == "suspect":
+                inv_reason = "Suspect Psychometrics / Multivariate Outliers"
+            else:
+                inv_reason = "Screened Out: Ineligible / Data Quality Issue"
 
         rows.append({
             "respondent_id": f"SEGOVIA_{idx + 1:04d}",

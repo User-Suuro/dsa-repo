@@ -1,2 +1,6 @@
 ﻿source_study,invalid_reason,lost_rows
-Public_S2_PH_Youth_Flood_Exposure,Screened out: Ineligibility or failed attention/careless response checks,171
+Public_S2_PH_Youth_Flood_Exposure,Careless / Failed Attention Checks,82
+Public_S2_PH_Youth_Flood_Exposure,Suspect Psychometrics / Multivariate Outliers,80
+Public_S2_PH_Youth_Flood_Exposure,Non-Consent / Ethical Exclusion,1
+Public_S2_PH_Youth_Flood_Exposure,Incomplete Survey Submission,7
+Public_S2_PH_Youth_Flood_Exposure,Age Ineligible (<18 or >29 years),1

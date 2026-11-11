@@ -1,6 +1,6 @@
 ﻿source_study,study_role,raw_rows,cleaned_rows,rows_lost,cleaned_pct,lost_pct,why_rows_lost
 Main_Study_PH_College_Students,Main Study (PH),128,128,0,100.0,0.0,None (all records valid and complete)
 Public_S4_PH_LGU_DRRM_Ravago,Public Study (PH LGUs),193,193,0,100.0,0.0,None (all records valid and complete)
-Public_S2_PH_Youth_Flood_Exposure,Public Study (PH Young Adults),541,370,171,68.39,31.61,Screened out: Ineligibility or failed attention/careless response checks (n=171)
+Public_S2_PH_Youth_Flood_Exposure,Public Study (PH Young Adults),541,370,171,68.39,31.61,Careless / Failed Attention Checks (n=82); Suspect Psychometrics / Multivariate Outliers (n=80); Non-Consent / Ethical Exclusion (n=1); Incomplete Survey Submission (n=7); Age Ineligible (<18 or >29 years) (n=1)
 Public_S3_FL24_Flooding_Society,Public Study (Standardized FL24),1200,1200,0,100.0,0.0,None (all records valid and complete)
-TOTAL_UNIFIED_DATASET,All Combined (Main + Public),2062,1891,171,91.71,8.29,Screened out: Ineligibility or failed attention/careless response checks (n=171)
+TOTAL_UNIFIED_DATASET,All Combined (Main + Public),2062,1891,171,91.71,8.29,Careless / Failed Attention Checks (n=82); Suspect Psychometrics / Multivariate Outliers (n=80); Incomplete Survey Submission (n=7); Age Ineligible (<18 or >29 years) (n=1); Non-Consent / Ethical Exclusion (n=1)
