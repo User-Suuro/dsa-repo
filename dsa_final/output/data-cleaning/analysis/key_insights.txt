@@ -41,15 +41,15 @@ Public_S3_UTAUT_Responsible_GenAI    Public Study        399          3.943     
     Public_S4B_UK_Liverpool_Staff    Public Study         22          2.227                 3.477                 2.727                    4.045                      3.989                 3.102                4.017    -0.915
 
 4. ANALYSIS 1 — DESCRIPTIVE STATISTICS (UNIFIED DATASET):
-              variable    n  mean   sd  median   min  max
-        aware_energy_n 2842  2.70 1.06    2.67  1.00 5.00
-        aware_carbon_n 2842  2.70 1.05    2.55  1.00 5.00
-     consider_impact_n 2842  2.66 0.94    2.40  1.00 5.00
-           avoid_use_n 2842  2.72 0.93    2.40  1.00 5.00
-          usage_freq_n 2842  3.72 0.71    3.80  1.00 5.00
-       Awareness_Index 2842  2.70 0.99    2.50  1.00 5.00
-        Behavior_Index 2842  2.69 0.89    2.40  1.00 5.00
-Awareness_Behavior_Gap 2842  0.01 0.64    0.00 -2.21 2.74
+              variable    n  mean  median  mode   sd   min  max
+        aware_energy_n 2842  2.70    2.67   2.0 1.06  1.00 5.00
+        aware_carbon_n 2842  2.70    2.55   2.0 1.05  1.00 5.00
+     consider_impact_n 2842  2.66    2.40   2.2 0.94  1.00 5.00
+           avoid_use_n 2842  2.72    2.40   2.0 0.93  1.00 5.00
+          usage_freq_n 2842  3.72    3.80   4.0 0.71  1.00 5.00
+       Awareness_Index 2842  2.70    2.50   2.0 0.99  1.00 5.00
+        Behavior_Index 2842  2.69    2.40   2.1 0.89  1.00 5.00
+Awareness_Behavior_Gap 2842  0.01    0.00  -0.7 0.64 -2.21 2.74
 
 5. ANALYSIS 2 — LIKERT RESPONSE DISTRIBUTION (UNIFIED DATASET):
                                    item  Strongly Disagree  Disagree  Neutral  Agree  Strongly Agree  pct_agree  pct_disagree

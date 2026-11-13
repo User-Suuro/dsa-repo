@@ -17,6 +17,7 @@ and generates all statistical tables and figures in a clear, step-by-step progre
   - Figure 4 (`fig4_index_by_usage.png`): Awareness vs. Behavior by AI-Usage Segment
   - Figure 5 (`fig5_open_ended_themes.png`): Open-Ended Qualitative Themes (Q7 & Q8)
   - Figure 6 (`fig6_correlation_and_gap.png`): Pearson Correlation Matrix & Gap Alignment
+  - Figure 7 (`fig7_descriptive_stats_summary.png`): Descriptive Statistics Summary (Mean, Median, Mode, SD)
 """
 
 import os
@@ -195,18 +196,35 @@ def compute_source_summary(df: DataFrame) -> pd.DataFrame:
 
 
 def compute_analysis1_descriptives(df: DataFrame) -> pd.DataFrame:
-    """Analysis 1: Descriptive statistics (mean, sd, median, min, max) across Q2..Q6 and indices."""
+    """Analysis 1: Descriptive statistics (mean, sd, median, mode, min, max) across Q2..Q6 and indices."""
     rows: List[Dict[str, object]] = []
     for col_name in DESC_VARS:
         stats = df.select(
             F.count(F.col(col_name)).alias("n"),
             F.round(F.mean(col_name), 2).alias("mean"),
-            F.round(F.stddev(col_name), 2).alias("sd"),
             F.round(F.percentile_approx(col_name, 0.5), 2).alias("median"),
+            F.round(F.stddev(col_name), 2).alias("sd"),
             F.round(F.min(col_name), 2).alias("min"),
             F.round(F.max(col_name), 2).alias("max"),
         ).collect()[0]
-        rows.append({"variable": col_name, **stats.asDict()})
+        mode_row = (
+            df.groupBy(col_name)
+            .count()
+            .orderBy(F.desc("count"), F.asc(col_name))
+            .first()
+        )
+        mode_val = round(float(mode_row[col_name]), 2) if mode_row is not None and mode_row[col_name] is not None else None
+        s_dict = stats.asDict()
+        rows.append({
+            "variable": col_name,
+            "n": s_dict["n"],
+            "mean": s_dict["mean"],
+            "median": s_dict["median"],
+            "mode": mode_val,
+            "sd": s_dict["sd"],
+            "min": s_dict["min"],
+            "max": s_dict["max"],
+        })
 
     out = pd.DataFrame(rows)
     out.to_csv(os.path.join(ANALYSIS_DIR, "analysis1_descriptive_stats.csv"), index=False, encoding="utf-8-sig")
@@ -676,6 +694,88 @@ def plot_fig6_correlation_and_gap(df: DataFrame, gap_pdf: pd.DataFrame) -> None:
     plt.close(fig)
 
 
+def plot_fig7_descriptive_stats_summary(df: DataFrame) -> None:
+    """Figure 7: Descriptive Statistics Summary — Central Tendency & Dispersion (Mean, Median, Mode, SD)."""
+    plot_cols = [
+        "Awareness_Index", "Behavior_Index", "usage_freq_n",
+        "aware_energy_n", "aware_carbon_n", "consider_impact_n", "avoid_use_n"
+    ]
+    df_pd = spark_to_pandas(df.select("source_study", *plot_cols))
+    df_ph = df_pd[df_pd["source_study"] == "Main_Study_PH_Env_Awareness"]
+
+    var_labels = [
+        ("Awareness_Index", "Awareness Index (Q3-Q4)"),
+        ("Behavior_Index", "Behavior Index (Q5-Q6)"),
+        ("usage_freq_n", "Q2: AI Usage Frequency"),
+        ("aware_energy_n", "Q3: Energy Consumption"),
+        ("aware_carbon_n", "Q4: Carbon Emissions"),
+        ("consider_impact_n", "Q5: Consider Impact"),
+        ("avoid_use_n", "Q6: Avoid Unnecessary Use"),
+    ]
+
+    likert_bands = [
+        (1.0, 1.8, "#fee2e2", "Very Low"),
+        (1.8, 2.6, "#ffedd5", "Low"),
+        (2.6, 3.4, "#fef9c3", "Moderate"),
+        (3.4, 4.2, "#dcfce7", "High"),
+        (4.2, 5.0, "#dbeafe", "Very High"),
+    ]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.2, 6.4), sharey=True)
+
+    def _render_sub(ax, data, title, n_count):
+        for x0, x1, color, _ in likert_bands:
+            ax.axvspan(x0, x1, color=color, alpha=0.32, zorder=0)
+
+        y_pos = np.arange(len(var_labels))[::-1]
+        means, sds, medians, modes = [], [], [], []
+        for var, _ in var_labels:
+            s = data[var]
+            means.append(float(s.mean()))
+            sds.append(float(s.std()))
+            medians.append(float(s.median()))
+            mode_s = s.mode()
+            modes.append(float(mode_s.iloc[0]) if not mode_s.empty else float(s.median()))
+
+        means = np.array(means)
+        sds = np.array(sds)
+        medians = np.array(medians)
+        modes = np.array(modes)
+
+        # Horizontal error bar for Mean +- 1 SD
+        ax.errorbar(means, y_pos, xerr=sds, fmt="none", ecolor="#1e293b", elinewidth=2.2, capsize=4.5, capthick=1.5, zorder=3)
+        ax.scatter(means, y_pos, color="#1d4ed8", s=95, marker="o", zorder=4, label="Mean (±1 SD)", edgecolor="white", linewidth=1.2)
+        ax.scatter(medians, y_pos, color="#059669", s=95, marker="D", zorder=4, label="Median", edgecolor="white", linewidth=1.2)
+        ax.scatter(modes, y_pos, color="#d97706", s=105, marker="^", zorder=4, label="Mode", edgecolor="white", linewidth=1.2)
+
+        # Value annotations
+        for i, y in enumerate(y_pos):
+            txt = f"M={means[i]:.2f} (SD={sds[i]:.2f}) | Med={medians[i]:.2f} | Mode={modes[i]:.2f}"
+            ax.text(1.05, y + 0.28, txt, fontsize=7.8, fontweight="bold", color="#1e293b", backgroundcolor="#ffffffb0")
+
+        ax.set_yticks(y_pos)
+        ax.set_yticklabels([lbl for _, lbl in var_labels], fontsize=9, fontweight="bold")
+        ax.set_xlim(0.9, 5.1)
+        ax.set_xlabel("Score Scale (1.0 to 5.0)", fontsize=9.5, fontweight="bold")
+        ax.set_title(f"{title}\n(N = {n_count:,})", fontsize=10.5, fontweight="bold", pad=10)
+        ax.grid(axis="x", linestyle="--", alpha=0.5)
+
+    _render_sub(ax1, df_pd, "Unified Benchmark Dataset (All Sources)", len(df_pd))
+    _render_sub(ax2, df_ph, "Primary Local Study (Camarines Norte, PH)", len(df_ph))
+
+    handles, labels = ax1.get_legend_handles_labels()
+    fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.03), ncol=3, frameon=True, fontsize=9.5)
+    fig.suptitle(
+        "Figure 7: Descriptive Statistics Summary — Central Tendency & Dispersion (Mean, Median, Mode, SD)",
+        fontsize=12,
+        fontweight="bold",
+        y=1.07,
+    )
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG_DIR, "fig7_descriptive_stats_summary.png"), bbox_inches="tight")
+    plt.close(fig)
+
+
 # ==============================================================================
 # 4. EXECUTIVE SUMMARY REPORT (`key_insights.txt`)
 # ==============================================================================
@@ -778,7 +878,7 @@ def main() -> None:
     compute_analysis7_and_8(df)
     log("Saved 10 topic-aligned analytical & cleaning-audit CSV tables to output/data-cleaning/analysis/")
 
-    # Generate figures in logical narrative order (Figure 1 through Figure 6)
+    # Generate figures in logical narrative order (Figure 1 through Figure 7)
     clean_existing_figures()
     plot_fig1_data_cleaning_summary(summary_df, reasons_df)
     plot_fig2_unified_indices_by_study(src_summary)
@@ -786,7 +886,8 @@ def main() -> None:
     plot_fig4_index_by_usage(by_seg)
     plot_fig5_open_ended_themes(theme_df, n_c, n_s, total_resp)
     plot_fig6_correlation_and_gap(df, gap_df)
-    log("Saved 6 ordered figures (fig1..fig6) to output/data-cleaning/analysis/figures/")
+    plot_fig7_descriptive_stats_summary(df)
+    log("Saved 7 ordered figures (fig1..fig7) to output/data-cleaning/analysis/figures/")
 
     write_key_insights_report(
         total_resp, sampled_cnt, n_c, n_s, overall_r,

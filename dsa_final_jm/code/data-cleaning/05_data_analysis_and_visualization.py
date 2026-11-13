@@ -13,13 +13,14 @@ Analyzes `output/data-cleaning/reduction/integrated_master_dataset.csv` (1,891 c
 and generates:
   - 8 Statistical Tables & Audit CSVs in `output/data-cleaning/analysis/`
   - `key_insights.txt` (Comprehensive summary of empirical findings)
-  - 6 High-Resolution Publication Figures in `output/data-cleaning/analysis/figures/`:
+  - 7 High-Resolution Publication Figures in `output/data-cleaning/analysis/figures/`:
       * `fig1_data_cleaning_summary.png`: Pipeline Integration & Screening Loss Flowchart
       * `fig2_unified_indices_by_study.png`: Construct Scores across Integrated Data Sources
       * `fig3_likert_diverging.png`: Likert Distributions (Awareness vs. Preparedness)
       * `fig4_index_by_flood_experience.png`: Scores by Flood History & Living Arrangement
       * `fig5_open_ended_themes.png`: Qualitative Themes (Challenges & Institutional Support)
       * `fig6_correlation_and_gap.png`: Pearson Correlation Heatmap & Gap Typology Distribution
+      * `fig7_descriptive_stats_summary.png`: Descriptive Statistics Summary (Mean, Median, Mode, SD)
 """
 
 import os
@@ -152,7 +153,8 @@ def generate_empirical_analysis_tables(df: pd.DataFrame) -> None:
     ]
     a1 = df[desc_cols].describe().T[["count", "mean", "std", "min", "50%", "max"]]
     a1.columns = ["count", "mean", "std", "min", "median", "max"]
-    a1 = a1.reset_index().rename(columns={"index": "variable"})
+    a1["mode"] = [df[c].mode().iloc[0] for c in desc_cols]
+    a1 = a1[["count", "mean", "median", "mode", "std", "min", "max"]].reset_index().rename(columns={"index": "variable"})
     a1.round(3).to_csv(os.path.join(ANALYSIS_DIR, "analysis1_descriptive_stats.csv"), index=False, encoding="utf-8-sig")
     a1.round(3).to_csv(os.path.join(ANALYSIS_DIR, "analysis1_overall_construct_indices.csv"), index=False, encoding="utf-8-sig")
 
@@ -583,6 +585,84 @@ def generate_figures(df: pd.DataFrame) -> None:
     plt.savefig(f6_path, dpi=200)
     plt.close()
     log(f"Saved: {f6_path}")
+
+    # --------------------------------------------------------------------------
+    # Figure 7: Descriptive Statistics Summary (Mean, Median, Mode, SD)
+    # --------------------------------------------------------------------------
+    fig7_vars = [
+        ("awareness_score", "Overall Flood Awareness"),
+        ("preparedness_score", "Overall Preparedness"),
+        ("aw_warning_index", "Warning Signals & Advisories"),
+        ("aw_local_hazard_index", "Local Flood Hazards"),
+        ("aw_safety_health_index", "Safety & Health Protocols"),
+        ("prep_supplies_index", "Emergency Supplies & Go-Bag"),
+        ("prep_planning_index", "Evacuation & Cutoff Planning"),
+    ]
+    df_ph = df[df["source_study"] == "Main_Study_PH_Flood_Awareness"]
+
+    likert_bands = [
+        (1.0, 1.8, "#fee2e2", "Very Low"),
+        (1.8, 2.6, "#ffedd5", "Low"),
+        (2.6, 3.4, "#fef9c3", "Moderate"),
+        (3.4, 4.2, "#dcfce7", "High"),
+        (4.2, 5.0, "#dbeafe", "Very High"),
+    ]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.2, 6.4), sharey=True)
+
+    def _render_sub(ax, data, title, n_count):
+        for x0, x1, color, _ in likert_bands:
+            ax.axvspan(x0, x1, color=color, alpha=0.32, zorder=0)
+
+        y_pos = np.arange(len(fig7_vars))[::-1]
+        means, sds, medians, modes = [], [], [], []
+        for var, _ in fig7_vars:
+            s = data[var]
+            means.append(float(s.mean()))
+            sds.append(float(s.std()))
+            medians.append(float(s.median()))
+            mode_s = s.mode()
+            modes.append(float(mode_s.iloc[0]) if not mode_s.empty else float(s.median()))
+
+        means = np.array(means)
+        sds = np.array(sds)
+        medians = np.array(medians)
+        modes = np.array(modes)
+
+        # Horizontal error bar for Mean +- 1 SD
+        ax.errorbar(means, y_pos, xerr=sds, fmt="none", ecolor="#1e293b", elinewidth=2.2, capsize=4.5, capthick=1.5, zorder=3)
+        ax.scatter(means, y_pos, color="#1d4ed8", s=95, marker="o", zorder=4, label="Mean (±1 SD)", edgecolor="white", linewidth=1.2)
+        ax.scatter(medians, y_pos, color="#059669", s=95, marker="D", zorder=4, label="Median", edgecolor="white", linewidth=1.2)
+        ax.scatter(modes, y_pos, color="#d97706", s=105, marker="^", zorder=4, label="Mode", edgecolor="white", linewidth=1.2)
+
+        # Value annotations
+        for i, y in enumerate(y_pos):
+            txt = f"M={means[i]:.2f} (SD={sds[i]:.2f}) | Med={medians[i]:.2f} | Mode={modes[i]:.2f}"
+            ax.text(1.05, y + 0.28, txt, fontsize=7.8, fontweight="bold", color="#1e293b", backgroundcolor="#ffffffb0")
+
+        ax.set_yticks(y_pos)
+        ax.set_yticklabels([lbl for _, lbl in fig7_vars], fontsize=9, fontweight="bold")
+        ax.set_xlim(0.9, 5.1)
+        ax.set_xlabel("Score Scale (1.0 to 5.0)", fontsize=9.5, fontweight="bold")
+        ax.set_title(f"{title}\n(N = {n_count:,})", fontsize=10.5, fontweight="bold", pad=10)
+        ax.grid(axis="x", linestyle="--", alpha=0.5)
+
+    _render_sub(ax1, df, "Unified Flood Risk Benchmark Dataset (All Sources)", len(df))
+    _render_sub(ax2, df_ph, "Primary Collegiate Survey (Camarines Norte, PH)", len(df_ph))
+
+    handles, labels = ax1.get_legend_handles_labels()
+    fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.03), ncol=3, frameon=True, fontsize=9.5)
+    fig.suptitle(
+        "Figure 7: Descriptive Statistics Summary — Central Tendency & Dispersion (Mean, Median, Mode, SD)",
+        fontsize=12,
+        fontweight="bold",
+        y=1.07,
+    )
+    plt.tight_layout()
+    f7_path = os.path.join(FIG_DIR, "fig7_descriptive_stats_summary.png")
+    plt.savefig(f7_path, dpi=200, bbox_inches="tight")
+    plt.close()
+    log(f"Saved: {f7_path}")
 
 
 def generate_key_insights_report(df: pd.DataFrame) -> None:
