@@ -761,7 +761,7 @@ def plot_fig7_descriptive_stats_summary(df: DataFrame) -> None:
         ax.grid(axis="x", linestyle="--", alpha=0.5)
 
     _render_sub(ax1, df_pd, "Unified Benchmark Dataset (All Sources)", len(df_pd))
-    _render_sub(ax2, df_ph, "Primary Local Study (Camarines Norte, PH)", len(df_ph))
+    _render_sub(ax2, df_ph, "Survey Results by Researchers", len(df_ph))
 
     handles, labels = ax1.get_legend_handles_labels()
     fig.legend(handles, labels, loc="upper center", bbox_to_anchor=(0.5, 1.03), ncol=3, frameon=True, fontsize=9.5)

@@ -2,7 +2,7 @@
 SUPERVISED MACHINE LEARNING SUMMARY REPORT (6 ALGORITHMS)
 Study: AI and the Environment: An Analysis of Public Awareness
 ================================================================================================
-Total Cleaned Dataset: 2,842 respondents (75% Train / 25% Test Split)
+Total Cleaned Dataset: 2,842 respondents (75% Train = 2,131 / 25% Test = 711 Split)
 
 CONSOLIDATED PERFORMANCE COMPARISON:
                        algorithm      task_type    metric_primary       metric_secondary
@@ -13,11 +13,30 @@ Multiple Linear Regression (MLR)     Regression       R² = 0.6173          RMSE
             Gaussian Naive Bayes Classification Accuracy = 80.03%      Prior = Empirical
     Support Vector Machine (SVM) Classification Accuracy = 82.98%  Kernel = RBF, C = 1.0
 
+SUPPORT VECTOR MACHINE (SVM, RBF KERNEL, C=1.0) CLASSIFICATION REPORT (n_test = 711):
+class_or_avg  precision  recall  f1-score  support
+         Low     0.8935  0.9541    0.9228 501.0000
+      Medium     0.6481  0.3017    0.4118 116.0000
+        High     0.6311  0.8191    0.7130  94.0000
+    accuracy     0.8298  0.8298    0.8298   0.8298
+   macro avg     0.7243  0.6917    0.6825 711.0000
+weighted avg     0.8188  0.8298    0.8117 711.0000
+
+DECISION TREE (MAX_DEPTH=3, GINI) CLASSIFICATION REPORT (n_test = 711):
+class_or_avg  precision  recall  f1-score  support
+         Low     0.9032  0.9501    0.9261 501.0000
+      Medium     0.6471  0.3793    0.4783 116.0000
+        High     0.6810  0.8404    0.7524  94.0000
+    accuracy     0.8425  0.8425    0.8425   0.8425
+   macro avg     0.7438  0.7233    0.7189 711.0000
+weighted avg     0.8321  0.8425    0.8300 711.0000
+
 KEY TAKEAWAYS FOR THESIS DEFENSE:
 1. Simple & Multiple Linear Regression show that Awareness Index is a strong, positive,
-   statistically robust predictor of responsible AI behavior (R² ~ 0.60 to 0.63).
-2. Support Vector Machine (SVM) and Decision Tree achieve top classification performance
-   (84%+ accuracy) in categorizing respondents into Low, Medium, and High responsible usage.
-3. KNN accuracy peaks at k=5..7, demonstrating strong local cluster cohesion among respondents
-   with similar awareness levels.
+   statistically robust predictor of responsible AI behavior (R² = 0.6029 to 0.6173).
+2. Support Vector Machine (SVM: 82.98% accuracy, weighted F1 = 0.8117) and Decision Tree
+   (84.25% accuracy, weighted F1 = 0.8300) achieve high classification performance in
+   categorizing respondents into Low, Medium, and High responsible AI usage.
+3. KNN accuracy reaches 82.14% at k=5 and peaks at k=13 (84.39%), demonstrating strong
+   local cluster cohesion among respondents with similar environmental awareness levels.
 ================================================================================================

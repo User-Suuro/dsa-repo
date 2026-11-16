@@ -1,2 +1,2 @@
-model,accuracy,max_depth
-Decision Tree Classifier,0.8425,3
+model,accuracy,weighted_f1,macro_f1,max_depth
+Decision Tree Classifier,0.8425,0.83,0.7189,3

@@ -65,7 +65,7 @@ def main() -> None:
 
     print(f"Accuracy (k = {k_chosen}): {acc_5 * 100:.2f}%")
     print("\nClassification Report:")
-    print(classification_report(y_test, y_pred, target_names=class_names))
+    print(classification_report(y_test, y_pred, labels=class_names, target_names=class_names, digits=4))
 
     # Evaluate accuracy across k = 1..15
     k_range = range(1, 16)

@@ -59,7 +59,7 @@ def main() -> None:
 
     print(f"Accuracy: {accuracy * 100:.2f}%")
     print("\nClassification Report:")
-    print(classification_report(y_test, y_pred, target_names=class_names))
+    print(classification_report(y_test, y_pred, labels=class_names, target_names=class_names, digits=4))
 
     metrics_df = pd.DataFrame([{
         "model": "Gaussian Naive Bayes",

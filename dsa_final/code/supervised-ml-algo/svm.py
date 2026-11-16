@@ -65,13 +65,21 @@ def main() -> None:
 
     print(f"Accuracy (RBF Kernel, C=1.0): {accuracy * 100:.2f}%")
     print("\nClassification Report:")
-    print(classification_report(y_test, y_pred, target_names=class_names))
+    report_str = classification_report(y_test, y_pred, labels=class_names, target_names=class_names, digits=4)
+    print(report_str)
+
+    report_dict = classification_report(y_test, y_pred, labels=class_names, target_names=class_names, output_dict=True)
+    report_df = pd.DataFrame(report_dict).transpose().round(4)
+    report_df.index.name = "class_or_avg"
+    report_df.to_csv(os.path.join(OUTPUT_DIR, "svm_classification_report.csv"))
 
     metrics_df = pd.DataFrame([{
         "model": "Support Vector Machine (SVM)",
         "kernel": "rbf",
         "C": 1.0,
         "accuracy": round(accuracy, 4),
+        "weighted_f1": round(report_dict["weighted avg"]["f1-score"], 4),
+        "macro_f1": round(report_dict["macro avg"]["f1-score"], 4),
     }])
     metrics_df.to_csv(os.path.join(OUTPUT_DIR, "svm_metrics.csv"), index=False)
 

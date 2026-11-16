@@ -61,7 +61,12 @@ def main() -> None:
 
     print(f"Accuracy: {accuracy * 100:.2f}%")
     print("\nClassification Report:")
-    print(classification_report(y_test, y_pred, target_names=class_names))
+    print(classification_report(y_test, y_pred, labels=class_names, target_names=class_names, digits=4))
+
+    report_dict = classification_report(y_test, y_pred, labels=class_names, target_names=class_names, output_dict=True)
+    report_df = pd.DataFrame(report_dict).transpose().round(4)
+    report_df.index.name = "class_or_avg"
+    report_df.to_csv(os.path.join(OUTPUT_DIR, "decision_tree_classification_report.csv"))
 
     print("\nFeature Importances:")
     for feat, imp in zip(FEATURE_NAMES, model.feature_importances_):
@@ -70,16 +75,18 @@ def main() -> None:
     metrics_df = pd.DataFrame([{
         "model": "Decision Tree Classifier",
         "accuracy": round(accuracy, 4),
+        "weighted_f1": round(report_dict["weighted avg"]["f1-score"], 4),
+        "macro_f1": round(report_dict["macro avg"]["f1-score"], 4),
         "max_depth": 3,
     }])
     metrics_df.to_csv(os.path.join(OUTPUT_DIR, "decision_tree_metrics.csv"), index=False)
 
-    # Visualize tree
+    # Visualize tree using model.classes_ so node class labels match sklearn's internal class order
     fig, ax = plt.subplots(figsize=(13.0, 7.5))
     tree.plot_tree(
         model,
         feature_names=FEATURE_NAMES,
-        class_names=class_names,
+        class_names=list(model.classes_),
         filled=True,
         rounded=True,
         fontsize=8,

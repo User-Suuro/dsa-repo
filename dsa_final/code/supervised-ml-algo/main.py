@@ -94,23 +94,35 @@ def summarize_models() -> None:
     comp_df = pd.DataFrame(records)
     comp_df.to_csv(os.path.join(OUTPUT_DIR, "supervised_models_comparison.csv"), index=False)
 
+    svm_rep_f = os.path.join(OUTPUT_DIR, "svm_classification_report.csv")
+    dt_rep_f = os.path.join(OUTPUT_DIR, "decision_tree_classification_report.csv")
+    svm_rep_txt = pd.read_csv(svm_rep_f).to_string(index=False) if os.path.exists(svm_rep_f) else ""
+    dt_rep_txt = pd.read_csv(dt_rep_f).to_string(index=False) if os.path.exists(dt_rep_f) else ""
+
     lines = [
         "=" * 96,
         "SUPERVISED MACHINE LEARNING SUMMARY REPORT (6 ALGORITHMS)",
         "Study: AI and the Environment: An Analysis of Public Awareness",
         "=" * 96,
-        "Total Cleaned Dataset: 2,842 respondents (75% Train / 25% Test Split)",
+        "Total Cleaned Dataset: 2,842 respondents (75% Train = 2,131 / 25% Test = 711 Split)",
         "",
         "CONSOLIDATED PERFORMANCE COMPARISON:",
         comp_df.to_string(index=False),
         "",
+        "SUPPORT VECTOR MACHINE (SVM, RBF KERNEL, C=1.0) CLASSIFICATION REPORT (n_test = 711):",
+        svm_rep_txt,
+        "",
+        "DECISION TREE (MAX_DEPTH=3, GINI) CLASSIFICATION REPORT (n_test = 711):",
+        dt_rep_txt,
+        "",
         "KEY TAKEAWAYS FOR THESIS DEFENSE:",
         "1. Simple & Multiple Linear Regression show that Awareness Index is a strong, positive,",
-        "   statistically robust predictor of responsible AI behavior (R² ~ 0.60 to 0.63).",
-        "2. Support Vector Machine (SVM) and Decision Tree achieve top classification performance",
-        "   (84%+ accuracy) in categorizing respondents into Low, Medium, and High responsible usage.",
-        "3. KNN accuracy peaks at k=5..7, demonstrating strong local cluster cohesion among respondents",
-        "   with similar awareness levels.",
+        "   statistically robust predictor of responsible AI behavior (R² = 0.6029 to 0.6173).",
+        "2. Support Vector Machine (SVM: 82.98% accuracy, weighted F1 = 0.8117) and Decision Tree",
+        "   (84.25% accuracy, weighted F1 = 0.8300) achieve high classification performance in",
+        "   categorizing respondents into Low, Medium, and High responsible AI usage.",
+        "3. KNN accuracy reaches 82.14% at k=5 and peaks at k=13 (84.39%), demonstrating strong",
+        "   local cluster cohesion among respondents with similar environmental awareness levels.",
         "=" * 96,
     ]
     with open(os.path.join(OUTPUT_DIR, "supervised_key_insights.txt"), "w", encoding="utf-8") as f:

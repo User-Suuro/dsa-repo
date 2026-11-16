@@ -1,2 +1,2 @@
-model,kernel,C,accuracy
-Support Vector Machine (SVM),rbf,1.0,0.8298
+model,kernel,C,accuracy,weighted_f1,macro_f1
+Support Vector Machine (SVM),rbf,1.0,0.8298,0.8117,0.6825
