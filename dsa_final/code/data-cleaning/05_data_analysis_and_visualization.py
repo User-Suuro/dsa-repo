@@ -81,7 +81,7 @@ LIKERT_ORDER: List[str] = [
 ]
 
 STUDY_DISPLAY_NAMES: Dict[str, str] = {
-    "Main_Study_PH_Env_Awareness": "Main Study (PH)",
+    "Main_Study_PH_Env_Awareness": "Researchers' Survey",
     "Public_S2_BD_Cognitive_Dependence": "Public S2 (BD)",
     "Public_S3_UTAUT_Responsible_GenAI": "Public S3 (UTAUT)",
     "Public_S4A_UK_Liverpool_Students": "Public S4A (UK Students)",
@@ -473,7 +473,7 @@ def plot_fig1_data_cleaning_summary(summary_df: pd.DataFrame, reasons_df: pd.Dat
     )
     axes[1].barh(
         y_c, cat_summary["main_removed"], left=cat_summary["public_removed"], height=bar_h,
-        color="#f59e0b", alpha=0.95, edgecolor="white", linewidth=0.8, label=f"Main Study PH ({tot_main_rem:,})",
+        color="#f59e0b", alpha=0.95, edgecolor="white", linewidth=0.8, label=f"Researchers' Survey ({tot_main_rem:,})",
     )
 
     max_cat = int(cat_summary["total_removed"].max())
@@ -481,7 +481,7 @@ def plot_fig1_data_cleaning_summary(summary_df: pd.DataFrame, reasons_df: pd.Dat
         cnt_v = int(row_c["total_removed"])
         pct_v = (cnt_v * 100.0 / tot_removed) if tot_removed else 0.0
         main_v = int(row_c["main_removed"])
-        note = f"  [{main_v} Main]" if main_v > 0 else ""
+        note = f"  [{main_v} Survey]" if main_v > 0 else ""
         axes[1].text(
             cnt_v + max_cat * 0.02, idx_i, f"{cnt_v:,} ({pct_v:.1f}%){note}",
             va="center", ha="left", color="#1e293b", fontweight="bold", fontsize=8.3,
