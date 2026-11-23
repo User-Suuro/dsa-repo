@@ -6,55 +6,57 @@
 
 ## 2.1 Introduction
 
-This chapter reviews conceptual literature and six verified empirical and technical studies examining the environmental footprint of generative Artificial Intelligence (AI), public and student awareness of AI's ecological costs, responsible digital behavior, and small-sample statistical modeling. All reviewed works serve strictly as theoretical and empirical literature context; no external or public survey datasets are incorporated into this study's methodology.
+This chapter reviews six verified empirical and technical studies on AI's physical resource footprint, public and student awareness, responsible usage habits, and small-sample machine learning. All cited studies serve strictly as literature context; none of their datasets enter our analytical pipeline.
 
 ---
 
-## 2.2 Thematic Related Literature
+## 2.2 Related Literature
 
-### 2.2.1 The Physical Environmental Footprint of AI
-Although cloud-hosted generative AI tools appear intangible to everyday users, training and deploying large language models depend on hyperscale data centers that draw immense electricity, freshwater for cooling, and mineral-intensive hardware. The International Energy Agency (IEA, 2025) reported that global data centers consumed approximately 415 TWh of electricity in 2024 (~1.5% of global electricity consumption) and projected demand to more than double by 2030 due to AI workloads.
+### 2.2.1 What AI Actually Costs in Power, Water, and Hardware
+Chatbots feel weightless because cloud servers stay out of sight. Behind every prompt sits industrial computing infrastructure drawing electricity and cooling water continuously. The International Energy Agency (IEA, 2025) estimated global data-center electricity use at roughly 415 TWh in 2024 (~1.5% of global electricity demand), with AI workloads poised to more than double that figure by 2030.
 
-Technical assessments show that everyday user queries (*inference*) accumulate a massive footprint alongside initial training. Luccioni, Jernite, and Strubell (2024) benchmarked 88 machine learning models across 10 tasks and proved that general-purpose generative AI models consume orders of magnitude more electricity per 1,000 inferences than specialized task-specific tools. Beyond electricity and operational carbon emissions, Li, Yang, Islam, and Ren (2023/2025) uncovered the hidden *water footprint* of AI, demonstrating that data-center evaporative cooling and power-plant water usage evaporate hundreds of thousands of liters of freshwater during training—tripling in warmer climates—and projecting 4.2 to 6.6 billion cubic meters of global AI water withdrawal by 2027. Furthermore, Berthelot, Caron, Jay, and Lefèvre (2024) applied a cradle-to-grave Life Cycle Assessment (LCA) to generative AI services, showing that embodied hardware manufacturing, network transmission, and rapid electronic waste compound operational energy impacts.
+Daily prompting (*inference*) adds up fast alongside model training. Luccioni, Jernite, and Strubell (2024) benchmarked 88 machine learning models across 10 tasks and proved that general-purpose generative AI burns orders of magnitude more electricity per 1,000 requests than narrow task-specific tools. Water carries a separate cost. Li, Yang, Islam, and Ren (2023/2025) measured direct evaporative cooling and indirect power-plant water use, showing that training large models evaporates hundreds of thousands of liters of clean freshwater (tripling in hotter climates) and projecting 4.2 to 6.6 billion cubic meters of global AI water withdrawal by 2027. Berthelot, Caron, Jay, and Lefèvre (2024) widened the lens through a cradle-to-grave Life Cycle Assessment (LCA), showing that GPU manufacturing, network links, and electronic waste compound operational energy costs.
 
-### 2.2.2 Public and Student Awareness of AI's Environmental Costs
-Despite widespread adoption of AI in higher education and daily life, public awareness of AI's resource demands remains uneven. Because cloud computing hides physical servers from end users, everyday users often perceive AI prompts as environmentally cost-free. In the Philippines, rapid expansion of AI infrastructure—exemplified by the country joining the US-led *Pax Silica* initiative and plans for a 4,000-acre AI industrial acceleration hub in the Luzon Economic Corridor (Rocamora, 2026; Villanueva, 2026)—places ecological awareness directly at the center of local public discourse concerning water security, power reliability, and land use.
+### 2.2.2 Public Awareness and the Philippine Context
+Heavy usage does not automatically build ecological literacy. In April 2026, the Philippines joined the US-led *Pax Silica* initiative, which includes plans for a 4,000-acre AI and semiconductor industrial hub in the Luzon Economic Corridor (Rocamora, 2026; Villanueva, 2026). Local news coverage quickly connected those plans to power-grid strain, freshwater supply, and land displacement, making community awareness directly relevant in Luzon provinces like Camarines Norte.
 
-### 2.2.3 Small-Sample Statistical Learning and Cross-Validation
-When working with focused community survey datasets ($N < 100$), conventional deep models or single holdout splits suffer from high variance and overfitting. Ng and Jordan (2002) classically established that generative classifiers such as **Gaussian Naive Bayes** converge more rapidly to their asymptotic performance on small sample sizes than complex discriminative models, while L2-regularized linear models (such as Logistic Regression and Simple Linear Regression) preserve bias-variance stability and parameter interpretability. Pairing these low-variance models with **Leave-One-Out Cross-Validation (LOOCV)** and **Repeated Stratified K-Fold Cross-Validation** maximizes training sample utilization while providing unbiased out-of-sample evaluation.
+### 2.2.3 Machine Learning on Small Survey Datasets
+Small datasets ($N < 100$) break habits borrowed from big-data tutorials. Single 75/25 holdout splits leave too few test rows to trust, while deep trees and large ensembles memorize sample noise. Ng and Jordan (2002) proved that generative classifiers like **Gaussian Naive Bayes** converge faster on small samples than complex discriminative models; paired with **L2-regularized Logistic Regression**, **Simple Linear Regression**, and **Leave-One-Out Cross-Validation (LOOCV)**, low-variance models keep predictions steady without overfitting.
 
 ---
 
-## 2.3 Related Studies (Six Verified Core Studies)
+## 2.3 Six Verified Related Studies
 
-1. **Cho, Wang, Kinoshita, Ikkatai, and Yokoyama (2025)** surveyed public populations in Japan ($N = 700$) and South Korea ($N = 700$) to link environmental awareness to Responsible Research and Innovation (RRI) pathways for sustainable AI. They reported sharp regional disparities: only **21.9%** of respondents in Japan and **50.1%** in South Korea were aware of AI's electricity, water, and carbon impacts, demonstrating that everyday AI popularity outpaces public ecological literacy.
-2. **Jelonek and Pawełoszek (2026)** conducted a mixed-methods survey ($N = 224$) examining societal attitudes and digital choices toward green AI. Using a composite Environmental Awareness Index combining cognitive, evaluative, and behavioral dimensions, they found that more than two-thirds of respondents expressed willingness to support greener AI solutions and that ecological awareness correlated positively with sustainable digital intent.
-3. **Dungo, Beltran, Declaro, Dela-Cruz, and Viray (2025)** investigated Filipino college students' awareness of the environmental implications of generative AI. Their findings revealed a notable resource blind spot: while Filipino students broadly understood that AI consumes electricity, most were unaware of data-center freshwater cooling withdrawals and rare-earth mineral extraction, highlighting the urgent need for structured sustainability education in Philippine higher education.
-4. **Rai, Bhandari, and Al-Absi (2026)** examined undergraduate students' generative AI usage, environmental awareness, and perceived responsibility at Kyungdong University Global. Although students exhibited moderate-to-high awareness—particularly among senior students—heavy AI users paradoxically found it harder to reduce their daily usage, highlighting habitual reliance as a barrier to responsible restraint.
-5. **Li, Yang, Islam, and Ren (2023/2025)** quantified the direct on-site evaporative cooling and indirect off-site power-plant water footprints of large AI models (*"Making AI Less 'Thirsty'"*). Their spatial-temporal analysis showed that water consumption intensifies drastically in warmer climates and stressed watersheds, directly explaining why tropical communities prioritize freshwater scarcity alongside carbon emissions.
-6. **Luccioni, Jernite, and Strubell (2024)** evaluated 88 models across 30 datasets and 10 tasks (*"Power Hungry Processing"*), establishing that multi-purpose generative AI inference uses orders of magnitude more energy than narrow task-specific tools. Alongside **Berthelot et al.'s (2024)** LCA findings on hardware depletion and e-waste, this technical evidence directly underpins our survey's behavioral measure of avoiding unnecessary AI queries (`Q6`).
+**Cho, Wang, Kinoshita, Ikkatai, and Yokoyama (2025)** surveyed residents in Japan ($N = 700$) and South Korea ($N = 700$) to link public awareness to Responsible Research and Innovation (RRI) pathways for sustainable AI. Only **21.9%** of Japanese respondents knew about AI's electricity, water, and carbon costs, compared with **50.1%** in South Korea.
+
+**Jelonek and Pawełoszek (2026)** ran a mixed-methods survey ($N = 224$) built around an Environmental Awareness Index covering cognitive, evaluative, and behavioral habits. More than two-thirds backed greener AI solutions, and higher awareness tracked directly with greener digital choices.
+
+**Dungo, Beltran, Declaro, Dela-Cruz, and Viray (2025)** studied Filipino college students' awareness of generative AI's environmental impact. Students generally recognized that AI consumes electricity, yet most missed data-center freshwater cooling and rare-earth mining.
+
+**Rai, Bhandari, and Al-Absi (2026)** surveyed undergraduates at Kyungdong University Global on generative AI habits and perceived responsibility. Even though students reported moderate-to-high awareness (especially seniors), heavy daily users still struggled to cut back once AI became routine.
+
+**Li, Yang, Islam, and Ren (2023/2025)** quantified AI's direct and indirect water footprint (*"Making AI Less 'Thirsty'"*), showing that evaporative cooling water loss escalates sharply in warmer climates; that directly explains why Philippine respondents place freshwater shortages ahead of carbon emissions.
+
+**Luccioni, Jernite, and Strubell (2024)** benchmarked inference power across 88 AI models (*"Power Hungry Processing"*), while **Berthelot et al. (2024)** mapped lifecycle hardware and e-waste impacts in *Procedia CIRP*. Both provide hard technical backing for skipping unnecessary AI prompts (`Q6`).
 
 ---
 
 ## 2.4 Synthesis Comparison Table
 
-| Study | Focus / Sample | Method | Key Finding | Relevance to Present Study |
+| Study | Setting / Sample | Method | Main Finding | Link to Our Study |
 | :--- | :--- | :--- | :--- | :--- |
-| **Cho et al. (2025)** | Japan ($N=700$) & South Korea ($N=700$) | Cross-national public survey | Only 21.9% (Japan) & 50.1% (South Korea) aware of AI's environmental impacts. | Establishes international baseline for public environmental awareness (`Q3`–`Q4`). |
-| **Jelonek & Pawełoszek (2026)** | General society ($N=224$) | Mixed-methods survey; composite EAI | >66% support greener AI; awareness positively links to sustainable digital choices. | Grounds our composite `Awareness_Index`, `Behavior_Index`, and mixed-method design. |
-| **Dungo et al. (2025)** | Filipino college students (Philippines) | Descriptive quantitative survey | Students recognize electricity use but have blind spots on water cooling & minerals. | Provides direct Philippine higher-education context for our Camarines Norte survey. |
-| **Rai et al. (2026)** | University students, Kyungdong Univ. Global | Survey on GenAI usage & responsibility | Moderate-to-high awareness, yet heavy users struggle to reduce AI consumption. | Explains our inverse usage-segment trend (Heavy users score lower than Light users). |
-| **Li et al. (2023/2025)** | LLM training & inference water footprint | Empirical water-footprint modeling | High evaporative water loss, especially in warm climates (4.2–6.6B m³ by 2027). | Directly contextualizes our #1 `Q7` finding: *Water Use & Scarcity* (`61.1%`). |
-| **Luccioni et al. (2024)** & **Berthelot et al. (2024)** | 88 AI models & GenAI lifecycle (LCA) | Energy benchmarking & cradle-to-grave LCA | Generative inference is orders of magnitude costlier than narrow tools; adds e-waste. | Supports `Q6` (*avoid unnecessary AI use*) and `Q7` energy/e-waste concerns. |
+| **Cho et al. (2025)** | Japan ($N=700$) & South Korea ($N=700$) | Cross-national survey | Only 21.9% (Japan) & 50.1% (South Korea) aware of AI's resource footprint. | International baseline for `Q3`–`Q4` awareness. |
+| **Jelonek & Pawełoszek (2026)** | General society ($N=224$) | Mixed-methods; composite EAI | >66% support greener AI; awareness links to greener choices. | Grounds our `Awareness_Index` and `Behavior_Index`. |
+| **Dungo et al. (2025)** | Filipino college students | Quantitative survey | Students know electricity use but miss cooling water & minerals. | Local Philippine higher-ed context. |
+| **Rai et al. (2026)** | Kyungdong Univ. Global students | Survey on GenAI & responsibility | Moderate-to-high awareness, yet heavy users struggle to cut back. | Matches our lower scores among Heavy daily users. |
+| **Li et al. (2023/2025)** | LLM training & inference | Water-footprint modeling | High evaporative water loss in warm climates (4.2–6.6B m³ by 2027). | Explains our #1 `Q7` concern: *Water Use & Scarcity* (`61.1%`). |
+| **Luccioni et al. (2024)** & **Berthelot et al. (2024)** | 88 AI models & GenAI services | Power benchmarks & LCA | Generative inference burns far more power than narrow tools; adds e-waste. | Technical basis for `Q6` (*avoid unnecessary AI use*). |
 
 ---
 
 ## 2.5 Research Gap
 
-Existing literature leaves three focused gaps addressed by this study:
-1. **Limited Localized Philippine Qualitative Insight**: Prior surveys seldom pair quantitative awareness–behavior scales with granular, line-by-line categorization of Filipino respondents' open-ended concerns (including emerging local infrastructure debates such as *Pax Silica*) and grassroots awareness recommendations.
-2. **Lack of Transparent Auditing of Off-Topic Open-Ended Responses**: Few small-scale survey papers explicitly document and categorize *unrelated* or *invalid* responses (e.g., respondents confusing environmental harm with cybersecurity, privacy, or AI autonomy), even though those misinterpretations themselves reveal public literacy gaps.
-3. **Methodological Over-Complication on Small Survey Datasets**: Many student ML studies apply high-variance algorithms or unstable single train-test splits to small datasets rather than using cross-validated, low-variance models suited for $N < 100$.
+Local Philippine studies rarely read and categorize every single open-ended answer alongside numeric Likert scales, and almost none audit *off-topic* replies openly even though those misconceptions show where public literacy breaks down. On the analytics side, small student surveys often copy big-data single holdout splits and heavy models instead of using cross-validated, low-variance algorithms built for $N < 100$. Our study closes both gaps using our primary dataset alone.
 
 ---
 

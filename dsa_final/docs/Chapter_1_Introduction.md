@@ -8,63 +8,61 @@
 
 ## 1.1 Background of the Study
 
-Artificial Intelligence (AI) tools—including conversational chatbots, writing assistants, and code generators—have rapidly transitioned into everyday tools across education, communication, software development, and daily routines. Behind their seamless screen interfaces, however, AI workloads rely on hyperscale data centers that demand large quantities of electricity, freshwater for evaporative and liquid cooling, and specialized silicon hardware that generates lifecycle carbon emissions and electronic waste. According to the International Energy Agency (IEA, 2025), global data centers consumed approximately 415 terawatt-hours (TWh) of electricity in 2024—about 1.5% of total global electricity demand—and this consumption is projected to more than double by 2030, driven primarily by AI workloads.
+Students and workers now open AI chatbots the same way they open a calculator. Because a response appears on a laptop or phone screen almost immediately, almost nobody pictures the server racks running behind the scenes. Those data centers house thousands of processors that consume heavy electricity, evaporate clean freshwater for cooling, and generate hardware waste. According to the International Energy Agency (IEA, 2025), global data centers drew roughly 415 terawatt-hours (TWh) of electricity in 2024, nearly 1.5% of global electricity demand, and AI workloads could push that demand to more than double by 2030.
 
-Empirical studies indicate that public awareness of AI's environmental costs remains uneven. Cho et al. (2025) reported that only 21.9% of respondents in Japan and 50.1% in South Korea were aware of AI's electricity, water, and carbon footprints. Jelonek and Pawełoszek (2026) developed a multidimensional Environmental Awareness Index ($N = 224$) and found that although more than two-thirds supported greener AI, cognitive awareness and daily habits require active educational support. In the Philippines, Dungo et al. (2025) found that while college students recognize AI's electrical demand, many overlook freshwater cooling withdrawals and resource extraction.
+Public understanding has not kept pace with daily adoption. Cho et al. (2025) surveyed residents in Japan and South Korea and found a wide gap: only 21.9% of Japanese respondents and 50.1% of South Korean respondents knew about AI's electricity, water, and carbon costs. Jelonek and Pawełoszek (2026) surveyed 224 respondents using a composite Environmental Awareness Index and reported that more than two-thirds backed greener AI tools once informed. In the Philippines, Dungo et al. (2025) found that while college students recognize AI's electricity demand, most still miss data-center cooling water and rare-earth mineral extraction.
 
-This issue is especially timely in the Philippines. In April 2026, the country joined *Pax Silica*, a United States-led initiative to strengthen global semiconductor and AI supply chains, including plans for a 4,000-acre AI-native industrial acceleration hub in the Luzon Economic Corridor (Rocamora, 2026; Villanueva, 2026). While such infrastructure promises investment and employment, it also heightens local public concern regarding water security, electricity grids, land conversion, and community livelihoods.
+That blind spot matters locally. In April 2026, the Philippines joined *Pax Silica*, a US-led supply-chain partnership for semiconductors and artificial intelligence that outlines a 4,000-acre industrial hub in the Luzon Economic Corridor (Rocamora, 2026; Villanueva, 2026). Projects at that scale bring investment and jobs, yet they also raise immediate local questions about power grids, municipal water supply, and land conversion.
 
-Accordingly, this study—**"AI and the Environment: An Analysis of Public Awareness and Responsible AI Usage"**—focuses exclusively on our primary community survey collected in Camarines Norte, Philippines (`84` raw responses $\to$ `72` cleaned, topic-valid records after explicitly auditing and removing `12` unrelated or blank entries). Using a simple, transparent Apache PySpark cleaning and analytics workflow paired with small-sample cross-validated machine learning, the study quantifies the relationship between environmental awareness and responsible AI use and deeply categorizes open-ended public concerns (`Q7`) and suggested solutions (`Q8`).
+This study focuses strictly on our own primary community survey from Camarines Norte, Philippines (`84` raw responses cleaned down to `72` topic-valid records after auditing and marking `12` excluded entries). We kept the study anchored on our own dataset instead of merging public surveys from abroad so our cleaning audit in Apache PySpark, our open-ended review of `Q7` and `Q8`, and our small-sample machine learning stay concrete and easy to verify.
 
 ---
 
 ## 1.2 Statement of the Problem
 
-While AI tools are increasingly used daily for academic and personal tasks, their electricity, water, and carbon costs remain largely invisible to everyday users. Specifically, this study seeks to answer five research questions:
+Everyday AI users rarely see the electricity, cooling water, or carbon attached to a prompt. Five questions guide this study:
 
-1. **What is the demographic profile and AI usage frequency of the respondents** in terms of age group (`Q1`) and AI usage frequency (`Q2`)?
-2. **What is the respondents' level of awareness of AI's environmental impact** in terms of electricity/energy consumption (`Q3`), data-center carbon emissions (`Q4`), and overall `Awareness_Index`?
-3. **What is the respondents' level of responsible AI usage** in terms of considering environmental impact when using AI (`Q5`), avoiding unnecessary AI use (`Q6`), and overall `Behavior_Index`?
-4. **How strongly does environmental awareness relate to responsible AI behavior, and which supervised machine learning models perform best on a small dataset (`N = 72`)?**
-5. **What environmental concerns (`Q7`), suggested solutions (`Q8`), and unrelated or invalid responses emerge from the open-ended survey answers?**
+1. Who answered the survey (`Q1`), and how often do they use AI tools (`Q2`)?
+2. How aware are respondents of AI's electricity consumption (`Q3`), data-center carbon impacts (`Q4`), and overall `Awareness_Index`?
+3. How responsibly do they use AI in terms of weighing environmental impact (`Q5`), skipping unnecessary prompts (`Q6`), and overall `Behavior_Index`?
+4. How closely does awareness predict responsible behavior, and which supervised machine learning models hold up best on `72` records?
+5. What worries (`Q7`), practical solutions (`Q8`), and unrelated or invalid entries appear across all `84` raw open-ended responses?
 
 ---
 
 ## 1.3 Objectives of the Study
 
-### General Objective
-To assess community awareness of the environmental impacts of Artificial Intelligence, analyze its relationship with responsible AI usage, categorize open-ended concerns and solutions (explicitly marking unrelated responses), and evaluate small-sample machine learning models using primary survey data (`84` raw $\to$ `72` cleaned records).
+Our general objective is to measure community awareness of AI's environmental impact, test how strongly awareness links to responsible AI habits, categorize every open-ended reply (including unrelated ones), and identify which machine learning models fit a small dataset (`N = 72`).
 
-### Specific Objectives
-1. To determine the age distribution and AI usage frequency segments (`Light`, `Moderate`, `Heavy`) of primary survey respondents (`Q1`–`Q2`).
-2. To measure respondents' environmental awareness (`Q3`–`Q4`, `Awareness_Index`) and responsible AI behavior (`Q5`–`Q6`, `Behavior_Index`).
-3. To evaluate the statistical correlation and behavioral alignment typology (`Awareness_Behavior_Gap` and `gap_type`) across usage segments.
-4. To thoroughly categorize all `84` raw open-ended responses in `Q7` (environmental concerns) and `Q8` (suggested solutions), explicitly marking unrelated/off-topic and invalid entries.
-5. To identify and validate the most appropriate supervised machine learning models for small tabular records (`N = 72`) using Leave-One-Out Cross-Validation (LOOCV) and Repeated Stratified 5-Fold Cross-Validation.
+Specifically, the study aims to:
+1. Profile respondents' age brackets and AI usage habits (`Light`, `Moderate`, and `Heavy` users).
+2. Measure environmental awareness (`Awareness_Index`) and responsible usage (`Behavior_Index`), then evaluate their correlation and alignment gap.
+3. Categorize all `84` raw open-ended answers in `Q7` and `Q8`, marking off-topic and invalid entries transparently.
+4. Benchmark low-variance machine learning models on `N = 72` using Leave-One-Out Cross-Validation (LOOCV) and Repeated Stratified 5-Fold Cross-Validation.
 
 ---
 
 ## 1.4 Conceptual Framework
 
-The study uses a simplified **Input–Process–Output (IPO)** framework anchored strictly on our primary survey (`main_dataset.csv`):
+We follow a simple Input–Process–Output (IPO) workflow built strictly around `main_dataset.csv`:
 
 ```mermaid
 flowchart LR
     subgraph INPUT["INPUT (Primary Survey Only)"]
         I1["Camarines Norte Community Survey\nmain_dataset.csv (84 Raw Responses)"]
-        I2["Part I: Q1 Age & Q2 AI Usage\nPart II: Q3 Energy & Q4 Carbon Awareness\nPart III: Q5 Consider Impact & Q6 Avoid Unnecessary Use\nPart IV: Q7 Concerns & Q8 Solutions (Open-Ended)"]
+        I2["Q1 Age & Q2 AI Usage\nQ3 Energy & Q4 Carbon Awareness\nQ5 Consider Impact & Q6 Avoid Unnecessary Use\nQ7 Concerns & Q8 Solutions (Open Text)"]
     end
 
-    subgraph PROCESS["PROCESS (Simplified 2-Script Pipeline)"]
-        P1["Script 1: PySpark Cleaning & Analysis\n• Drop PII & fix '24-34' -> '25-34'\n• Mark & exclude 12 unrelated/blank rows (N = 72)\n• Compute Indices, Correlations & Q7/Q8 Categories"]
-        P2["Script 2: Small-Sample ML (N = 72)\n• LOOCV & Repeated 10x5-Fold CV\n• Simple Linear Regression (Continuous)\n• Gaussian NB & L2 Logistic Regression (Binary/3-Class)"]
+    subgraph PROCESS["PROCESS (2 Python Scripts)"]
+        P1["Script 1: PySpark Cleaning & Analysis\n• Remove PII & fix '24-34' -> '25-34'\n• Mark & exclude 12 unrelated/blank rows (N = 72)\n• Compute scores, correlations & Q7/Q8 categories"]
+        P2["Script 2: Small-Sample ML (N = 72)\n• LOOCV & 10x5-Fold Stratified CV\n• Simple Linear Regression (Scores)\n• Gaussian NB & L2 Logistic Regression (Groups)"]
         P1 --> P2
     end
 
-    subgraph OUTPUT["OUTPUT (Verified Findings)"]
-        O1["72 Cleaned Records + All-84 Q7/Q8 Audit\n(Unrelated & Invalid Marked)"]
+    subgraph OUTPUT["OUTPUT"]
+        O1["72 Clean Records + All-84 Q7/Q8 Audit\n(Unrelated & Invalid Marked)"]
         O2["Awareness-Behavior Link (r = 0.7643)\n& Small-N ML Benchmarks"]
-        O3["Actionable Recommendations for\nLocal Green-AI Education & Mindful Use"]
+        O3["Local Green-AI Education &\nMindful-Use Recommendations"]
     end
 
     INPUT --> PROCESS --> OUTPUT
@@ -74,28 +72,26 @@ flowchart LR
 
 ## 1.5 Significance of the Study
 
-- **Everyday AI Users and Students**: Reveals the hidden freshwater cooling, electricity, and carbon costs of routine prompts and highlights practical habits such as digital minimalism and avoiding unnecessary AI queries.
-- **Schools and Educators**: Directly supports curriculum development because *Education & Literacy Programs* (`57.7%`) emerged as the top respondent-recommended intervention in `Q8`.
-- **Local Stakeholders and Policymakers**: Captures grounded Filipino community concerns—including water scarcity (`61.1%`) and local land/livelihood worries surrounding *Pax Silica* (`11.1%`)—to inform transparent, sustainable AI governance.
-- **Data Analytics Students and Small-Sample Researchers**: Demonstrates a clean, minimalist PySpark and cross-validated scikit-learn methodology specifically designed for small primary datasets (`N = 72`) without inflating sample sizes with mismatched external datasets.
+- **Students and Everyday AI Users**: Makes the cooling-water and electricity footprint of casual prompts concrete, pointing toward practical habits like skipping AI on tasks you can do yourself.
+- **Schools and Teachers**: Directly supports curricular updates, since *Education & Literacy Programs* (`57.7%`) topped all respondent suggestions in `Q8`.
+- **Local Leaders**: Captures grounded Filipino worries around municipal water shortages (`61.1%`) and land impacts tied to *Pax Silica* (`11.1%`).
+- **Analytics Students**: Shows how to run clean PySpark auditing and honest cross-validated machine learning on a modest `72`-record survey without padding the sample with mismatched external files.
 
 ---
 
 ## 1.6 Scope and Delimitations
 
-- **Scope**: Exclusively analyzes our primary Google Forms community survey (`main_dataset.csv`, `84` raw responses, `72` cleaned topic-valid responses) collected in Daet and nearby municipalities of Camarines Norte, Philippines during the Second Semester of AY 2025–2026. No external or public datasets are included in the methodology or analysis.
-- **Delimitations**:
-  - **Small, Non-Random Sample**: With `N = 72` cleaned respondents (`86.1%` aged 18–24), findings represent descriptive and predictive patterns for this local community/student cohort rather than nationwide generalizations.
-  - **Explicit Exclusion of Unrelated Responses**: Twelve raw rows (`7` off-topic Q7 entries discussing privacy, hacking, misinformation, over-dependence, synthetic reality, or AGI autonomy; `4` blank forms; and `1` `"."` placeholder) were explicitly documented and excluded from quantitative analysis, and `1` verbatim copied Q8 prompt was excluded from Q8 theme counts (`n = 71` valid Q8 answers).
-  - **Self-Reported Ratings**: Awareness and behavior measures rely on 5-point self-reported Likert scores (`1.0`–`5.0`) rather than hardware telemetry of actual electricity usage.
+This work covers only our Google Forms community survey (`dataset/main_dataset.csv`: `84` raw responses, `72` clean records) collected in Daet and nearby towns of Camarines Norte during the Second Semester of AY 2025–2026. No external or public datasets appear in the methodology or models.
+
+Three real boundaries apply. First, `86.1%` of our `72` clean respondents are aged 18–24, so these findings reflect a local youth and student community rather than the whole country. Second, `12` raw rows were excluded from quantitative modeling and documented openly (`7` off-topic Q7 answers about privacy, hacking, misinformation, dependence, fake reality, or sentient AI; `4` blank forms; and `1` dot-only entry), while `1` verbatim copied Q8 prompt was excluded from `Q8` counts (`n = 71` valid Q8 replies). Third, Likert ratings measure self-reported awareness and habits rather than metered device wattage.
 
 ---
 
 ## 1.7 Definition of Terms
 
-1. **AI Usage Frequency (`Q2` / `usage_freq_n`)**: Self-reported regularity of AI tool use from `1.0` (*Rarely*) to `5.0` (*Several times a day*), grouped into *Light* (`1–2`), *Moderate* (`3`), and *Heavy* (`4–5`) segments.
-2. **Awareness Index (`Awareness_Index`)**: Mean of `Q3` (energy consumption awareness) and `Q4` (carbon/data-center impact awareness) on a `1.0`–`5.0` scale.
-3. **Behavior Index (`Behavior_Index`)**: Mean of `Q5` (considering environmental impact during AI use) and `Q6` (avoiding unnecessary AI use) on a `1.0`–`5.0` scale.
-4. **Awareness–Behavior Gap (`Awareness_Behavior_Gap`)**: Difference $\text{Awareness\_Index} - \text{Behavior\_Index}$, classifying respondents into *Aware & taking action* (`69.4%`), *Aware but not acting* (`12.5%`), *Acting beyond awareness* (`9.7%`), and *Unaware & not acting* (`8.3%`).
-5. **Unrelated / Off-Topic Response**: Any open-ended `Q7` answer addressing non-environmental AI risks (such as cybersecurity, data privacy, misinformation, or AGI sentience) rather than ecological or natural-resource impacts (`n = 7` of `84` raw forms).
-6. **Leave-One-Out Cross-Validation (LOOCV)**: A small-sample validation procedure where a model is trained $N$ times on $N - 1$ records (`71`) and tested on the single held-out record, producing low-bias out-of-sample evaluation across all `72` respondents.
+1. **AI Usage Frequency (`Q2` / `usage_freq_n`)**: How often a person uses AI tools, scored `1` (*Rarely*) to `5` (*Several times a day*), grouped into *Light* (`1–2`), *Moderate* (`3`), and *Heavy* (`4–5`).
+2. **Awareness Index**: Average of `Q3` (electricity awareness) and `Q4` (carbon/data-center awareness) on a `1.0`–`5.0` scale.
+3. **Behavior Index**: Average of `Q5` (weighing environmental impact during use) and `Q6` (skipping unnecessary AI use) on a `1.0`–`5.0` scale.
+4. **Awareness–Behavior Gap**: `Awareness_Index − Behavior_Index`, sorting respondents into *Aware & taking action* (`69.4%`), *Aware but not acting* (`12.5%`), *Acting beyond awareness* (`9.7%`), and *Unaware & not acting* (`8.3%`).
+5. **Unrelated / Off-Topic Response**: Any `Q7` reply discussing non-environmental AI risks like hacking, privacy, misinformation, or autonomous robots (`n = 7` of `84` raw forms).
+6. **Leave-One-Out Cross-Validation (LOOCV)**: Testing a model `72` separate times, each time training on `71` respondents and predicting the single left-out respondent so small-sample accuracy stays reliable.
