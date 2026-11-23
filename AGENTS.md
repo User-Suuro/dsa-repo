@@ -4,7 +4,7 @@
 Monorepo of Python and PySpark data engineering, survey NLP, statistical analytics, and machine learning projects.
 
 ## Repository Map
-- `dsa_final/`: Capstone 5-stage PySpark multi-source survey integration and analytics pipeline (see `dsa_final/AGENTS.md` for detailed commands and rules).
+- `dsa_final/`: Simplified 2-script PySpark & small-sample ML pipeline strictly focused on our primary community survey (`84` raw $\to$ `72` cleaned records; see `dsa_final/AGENTS.md`).
 - `dsa_final_jm/`: 5-stage PySpark multi-source flood risk awareness & preparedness pipeline for college students and young adults ($N=1,891$ clean records; see `dsa_final_jm/AGENTS.md`).
 - `study_processed_data/`: 4-stage PySpark preprocessing & statistical analysis for student AI tools survey (`main.py`, `analysis.py`).
 - `cleaned_data_group_act/`: PySpark multi-LLM consensus classification & survey integration (`cleaned_data.py`, `analysis.py`).
@@ -15,12 +15,9 @@ Monorepo of Python and PySpark data engineering, survey NLP, statistical analyti
 
 ## Setup and Commands
 ```powershell
-# Run the dsa_final 5-stage data cleaning & analysis pipeline
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\01_data_integration.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\02_data_cleansing.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\03_data_transformation.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\04_data_reduction.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\data-cleaning\05_data_analysis_and_visualization.py
+# Run the simplified dsa_final cleaning, Q7/Q8 categorization, and small-sample ML pipeline
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\01_clean_and_analyze.py
+.\dsa_final\.venv\Scripts\python.exe dsa_final\code\02_machine_learning.py
 
 # Run the dsa_final_jm 5-stage flood risk data cleaning & analysis pipeline
 .\dsa_final_jm\.venv\Scripts\python.exe dsa_final_jm\code\data-cleaning\01_data_integration.py
@@ -28,10 +25,6 @@ Monorepo of Python and PySpark data engineering, survey NLP, statistical analyti
 .\dsa_final_jm\.venv\Scripts\python.exe dsa_final_jm\code\data-cleaning\03_data_transformation.py
 .\dsa_final_jm\.venv\Scripts\python.exe dsa_final_jm\code\data-cleaning\04_data_reduction.py
 .\dsa_final_jm\.venv\Scripts\python.exe dsa_final_jm\code\data-cleaning\05_data_analysis_and_visualization.py
-
-# Run Supervised and Unsupervised Machine Learning (dsa_final)
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\supervised-ml-algo\main.py
-.\dsa_final\.venv\Scripts\python.exe dsa_final\code\unsupervised-ml-algo\main.py
 
 # Run Supervised and Unsupervised Machine Learning (dsa_final_jm)
 .\dsa_final_jm\.venv\Scripts\python.exe dsa_final_jm\code\supervised-ml-algo\main.py

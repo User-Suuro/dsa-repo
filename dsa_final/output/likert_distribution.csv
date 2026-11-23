@@ -1,0 +1,5 @@
+﻿item,Strongly Disagree,Disagree,Neutral,Agree,Strongly Agree,pct_agree,pct_neutral,pct_disagree
+Q3: Aware AI uses lots of energy,6,3,9,27,27,75.0,12.5,12.5
+Q4: Aware data centers add emissions,5,4,4,29,30,81.9,5.6,12.5
+Q5: Consider impact when using AI,6,3,18,30,15,62.5,25.0,12.5
+Q6: Avoid unnecessary AI use,4,1,6,33,28,84.7,8.3,6.9

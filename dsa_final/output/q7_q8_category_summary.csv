@@ -1,0 +1,19 @@
+﻿question,group,category,count,pct_of_valid,pct_of_raw84
+Q7,Valid Environmental Concern,Water Use & Scarcity,44,61.1,52.4
+Q7,Valid Environmental Concern,Energy & Electricity Use,30,41.7,35.7
+Q7,Valid Environmental Concern,Carbon & Climate Change,22,30.6,26.2
+Q7,Valid Environmental Concern,"Ecosystem, Land & Pax Silica",8,11.1,9.5
+Q7,Valid Environmental Concern,E-Waste & Resource Depletion,8,11.1,9.5
+Q7,Valid Environmental Concern,Heat & Noise Pollution,5,6.9,6.0
+Q7,Valid Environmental Concern,General Environmental Mention,2,2.8,2.4
+Q7,Unrelated / Excluded,Unrelated / Off-Topic (Non-Env),7,,8.3
+Q7,Unrelated / Excluded,Blank / Placeholder ('.'),5,,6.0
+Q8,Valid Suggested Solution,Education & Literacy Programs,41,57.7,48.8
+Q8,Valid Suggested Solution,Awareness Campaigns & Media,39,54.9,46.4
+Q8,Valid Suggested Solution,Responsible & Mindful AI Use,35,49.3,41.7
+Q8,Valid Suggested Solution,"Policy, Governance & Limits",10,14.1,11.9
+Q8,Valid Suggested Solution,Corporate Transparency & Labels,9,12.7,10.7
+Q8,Valid Suggested Solution,Green & Sustainable AI Tech,4,5.6,4.8
+Q8,Unrelated / Invalid,Excluded w/ Off-Topic Q7,7,,8.3
+Q8,Unrelated / Invalid,Blank / Placeholder ('.'),5,,6.0
+Q8,Unrelated / Invalid,Invalid: Copied Prompt Text,1,,1.2

@@ -1,0 +1,9 @@
+﻿variable,label,n,mean,sd,median,mode,min,max
+usage_freq_n,Q2: AI Usage Frequency,72,3.74,1.28,4.0,5.0,1.0,5.0
+aware_energy_n,Q3: Energy Awareness,72,3.92,1.2,4.0,4.0,1.0,5.0
+aware_carbon_n,Q4: Carbon Awareness,72,4.04,1.16,4.0,5.0,1.0,5.0
+consider_impact_n,Q5: Consider Env. Impact,72,3.62,1.12,4.0,4.0,1.0,5.0
+avoid_use_n,Q6: Avoid Unnecessary Use,72,4.11,1.01,4.0,4.0,1.0,5.0
+Awareness_Index,Awareness Index (Q3-Q4 Mean),72,3.98,1.14,4.0,4.0,1.0,5.0
+Behavior_Index,Behavior Index (Q5-Q6 Mean),72,3.87,0.98,4.0,4.0,1.0,5.0
+Awareness_Behavior_Gap,Awareness-Behavior Gap,72,0.11,0.74,0.0,0.0,-2.0,2.0

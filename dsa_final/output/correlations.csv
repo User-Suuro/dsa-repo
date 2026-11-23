@@ -1,0 +1,8 @@
+﻿var_1,var_2,pearson_r,pearson_p,spearman_rho,spearman_p,significant_05
+Awareness_Index,Behavior_Index,0.7643,5.639e-15,0.6356,1.997e-09,Yes
+aware_energy_n,aware_carbon_n,0.8789,3.3594e-24,0.8268,3.6933e-19,Yes
+consider_impact_n,avoid_use_n,0.6699,1.234e-10,0.5645,2.4098e-07,Yes
+aware_carbon_n,avoid_use_n,0.7644,5.5589e-15,0.6072,1.5612e-08,Yes
+aware_energy_n,consider_impact_n,0.6396,1.4661e-09,0.5173,3.2802e-06,Yes
+usage_freq_n,Behavior_Index,-0.1979,0.095701,-0.1799,0.13045,No
+usage_freq_n,Awareness_Index,-0.1875,0.11468,-0.185,0.11982,No

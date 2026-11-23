@@ -1,79 +1,38 @@
-# AI and the Environment: An Analysis of Public Awareness
+# AI and the Environment: An Analysis of Public Awareness and Responsible AI Usage
+
+A simplified, reproducible Apache PySpark and Scikit-Learn analytics project analyzing our primary community survey (`dataset/main_dataset.csv`: **84 raw responses $\to$ 72 cleaned topic-valid records**, with all **12 excluded/unrelated responses** explicitly audited and marked).
 
 ## Setup
 
-1. Create a virtual environment:
-
 ```powershell
 python -m venv .venv
-```
-
-2. Activate it:
-
-```powershell
 .\.venv\Scripts\Activate.ps1
-```
-
-3. Install dependencies:
-
-```powershell
 pip install -r requirements.txt
-```
-
-4. Set the PySpark Python environment:
-
-```powershell
-$env:PYSPARK_PYTHON = (Get-Command python).Source
-$env:PYSPARK_DRIVER_PYTHON = (Get-Command python).Source
 ```
 
 ## Run
 
-### 1. Data Cleaning & Integration Pipeline
-
 ```powershell
-python code\data-cleaning\01_data_integration.py
-python code\data-cleaning\02_data_cleansing.py
-python code\data-cleaning\03_data_transformation.py
-python code\data-cleaning\04_data_reduction.py
-python code\data-cleaning\05_data_analysis_and_visualization.py
+# Step 1: PySpark Data Cleaning (84 -> 72), Q7/Q8 Categorization & Descriptive Analysis (Figs 1-4)
+.\.venv\Scripts\python.exe code\01_clean_and_analyze.py
+
+# Step 2: Small-Sample Machine Learning with LOOCV & Repeated 10x5-Fold CV (Figs 5-6)
+.\.venv\Scripts\python.exe code\02_machine_learning.py
 ```
 
-### 2. Supervised Machine Learning (6 Algorithms)
+## Outputs
 
-Run all models or individual algorithms:
-
-```powershell
-# Run all 6 supervised algorithms sequentially
-python code\supervised-ml-algo\main.py
-
-# Or run individual algorithms:
-python code\supervised-ml-algo\slr.py             # Simple Linear Regression
-python code\supervised-ml-algo\mlr.py             # Multiple Linear Regression
-python code\supervised-ml-algo\decision_tree.py   # Decision Tree Classifier
-python code\supervised-ml-algo\knn.py             # K-Nearest Neighbors Classifier
-python code\supervised-ml-algo\naive_bayes.py     # Gaussian Naive Bayes Classifier
-python code\supervised-ml-algo\svm.py             # Support Vector Machine Classifier
-```
-
-### 3. Unsupervised Machine Learning (2 Algorithms)
-
-Run all models or individual algorithms:
-
-```powershell
-# Run both K-Means and Mean-Shift sequentially
-python code\unsupervised-ml-algo\main.py
-
-# Or run individual algorithms:
-python code\unsupervised-ml-algo\kmeans.py        # K-Means Clustering & Personas (k=4)
-python code\unsupervised-ml-algo\mean_shift.py   # Mean-Shift Density Clustering
-```
+- **Cleaned Data & Audits (`output/`)**: `cleaned_main_dataset.csv` (`N = 72`), `cleaning_audit_all84.csv`, `q7_q8_categorization_all84.csv` (marking all unrelated/invalid entries), `q7_q8_category_summary.csv`, descriptive/correlation CSVs, and small-sample CV ML benchmarks (`ml_summary.txt`).
+- **Figures (`output/figures/`)**:
+  - `fig1_data_cleaning_audit.png`
+  - `fig2_likert_and_usage.png`
+  - `fig3_q7_q8_categorization.png`
+  - `fig4_correlation_and_gap.png`
+  - `fig5_ml_regression_loocv.png`
+  - `fig6_ml_small_sample_classification.png`
+- **Paper (`docs/`)**: `IEEE-AI-and-the-Environment-Finals-Rev2.docx` and `IEEE-AI-and-the-Environment-Finals-Rev2.pdf`.
 
 ## Requirements
 
-* Python 3.14.7
-* Java JDK 17
-* PySpark 4.2.0
-* Pandas 3.0.6
-* NumPy 2.5.3
-* Matplotlib 3.11.2
+- Python 3.14+ & Java JDK 17
+- `pyspark==4.2.0`, `pandas==3.0.6`, `numpy==2.5.3`, `matplotlib==3.11.2`, `scikit-learn==1.9.1`, `scipy==1.18.1`
