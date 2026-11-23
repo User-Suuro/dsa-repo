@@ -1,7 +1,0 @@
-﻿model,cv5_acc,cv10x5_acc,cv10x5_std,loocv_acc,loocv_weighted_f1
-Gaussian Naive Bayes,0.7381,0.7384,0.0578,0.7222,0.6744
-K-Nearest Neighbors (k=7),0.7371,0.7299,0.0689,0.7222,0.6594
-Logistic Regression (L2),0.7238,0.7261,0.0641,0.7222,0.6603
-Random Forest (max_depth=3),0.7362,0.7247,0.0691,0.7083,0.6463
-Decision Tree (max_depth=2),0.7219,0.7193,0.0838,0.7222,0.6961
-Linear SVM (C=1.0),0.7229,0.7134,0.0581,0.7222,0.6563

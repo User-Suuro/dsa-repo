@@ -1,0 +1,5 @@
+﻿model,train_n,test_n,accuracy,precision_weighted,recall_weighted,f1_weighted
+Decision Tree (max_depth=3),50,22,0.7727,0.7775,0.7727,0.7575
+Support Vector Machine (SVM),50,22,0.7273,0.7323,0.7273,0.6989
+Gaussian Naive Bayes,50,22,0.7273,0.7323,0.7273,0.6989
+K-Nearest Neighbors (k=5),50,22,0.7273,0.7323,0.7273,0.6989

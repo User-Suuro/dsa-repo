@@ -35,3 +35,8 @@ Monorepo of Python and PySpark data engineering, survey NLP, statistical analyti
 - Never commit `.venv/` directories (`dsa_final/.venv` and `study_processed_data/.venv` are git-ignored).
 - Always set `os.environ["SPARK_HOME"] = os.path.dirname(pyspark.__file__)` before creating a `SparkSession` on Windows because the parent path `C:\Coding Projects\Python Projects` contains spaces.
 
+## Writing Style Rules (`.agents/rules/writing-style.md`)
+- Avoid the phrase `"Reading all"` (and `"Reviewing all"`); use **"Analyzed"** instead.
+- Avoid semicolons (`;`) as much as possible in prose, captions, and tables (use periods, commas, or conjunctions instead).
+- Avoid long dashes (`—` em dash and `–` en dash) in prose, headings, captions, and tables; use plain hyphens (`-`), colons, commas, or `"to"` instead.
+

@@ -16,21 +16,21 @@ pip install -r requirements.txt
 # Step 1: PySpark Data Cleaning (84 -> 72), Q7/Q8 Categorization & Descriptive Analysis (Figs 1-4)
 .\.venv\Scripts\python.exe code\01_clean_and_analyze.py
 
-# Step 2: Small-Sample Machine Learning with LOOCV & Repeated 10x5-Fold CV (Figs 5-6)
+# Step 2: Supervised Machine Learning with 70/30 Train-Test Split (Figs 5-6)
 .\.venv\Scripts\python.exe code\02_machine_learning.py
 ```
 
 ## Outputs
 
-- **Cleaned Data & Audits (`output/`)**: `cleaned_main_dataset.csv` (`N = 72`), `cleaning_audit_all84.csv`, `q7_q8_categorization_all84.csv` (marking all unrelated/invalid entries), `q7_q8_category_summary.csv`, descriptive/correlation CSVs, and small-sample CV ML benchmarks (`ml_summary.txt`).
+- **Cleaned Data & Audits (`output/`)**: `cleaned_main_dataset.csv` (`N = 72`), `cleaning_audit_all84.csv`, `q7_q8_categorization_all84.csv` (marking all unrelated/invalid entries), `q7_q8_category_summary.csv`, descriptive/correlation CSVs, and supervised ML evaluation tables (`ml_summary.txt`).
 - **Figures (`output/figures/`)**:
   - `fig1_data_cleaning_audit.png`
   - `fig2_likert_and_usage.png`
   - `fig3_q7_q8_categorization.png`
   - `fig4_correlation_and_gap.png`
-  - `fig5_ml_regression_loocv.png`
-  - `fig6_ml_small_sample_classification.png`
-- **Paper (`docs/`)**: `IEEE-AI-and-the-Environment-Finals-Rev2.docx` and `IEEE-AI-and-the-Environment-Finals-Rev2.pdf`.
+  - `fig5_ml_regression.png`
+  - `fig6_ml_classification.png`
+- **Paper (`docs/`)**: `IEEE-AI-and-the-Environment-Finals-Rev5.docx` and `IEEE-AI-and-the-Environment-Finals-Rev5.pdf`.
 
 ## Requirements
 

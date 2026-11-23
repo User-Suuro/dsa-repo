@@ -1,0 +1,3 @@
+﻿model,predictors,train_n,test_n,test_r2,test_rmse,test_mae
+Simple Linear Regression,Awareness_Index,50,22,0.6391,0.7577,0.571
+Multiple Linear Regression,"Q2, Q3, Q4",50,22,0.6409,0.7558,0.5728

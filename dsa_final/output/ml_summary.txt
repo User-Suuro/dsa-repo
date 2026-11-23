@@ -1,23 +1,17 @@
-SMALL-SAMPLE MACHINE LEARNING SUMMARY (N = 72 CLEANED MAIN DATASET)
-==========================================================================
-Recommended Validation: Leave-One-Out CV (LOOCV) + Repeated 10x5-Fold Stratified CV
-Best Continuous Model : Simple Linear Regression (SLR) — LOOCV R² = 0.5483, RMSE = 0.6507, MAE = 0.5035
-SLR Equation          : Behavior_Index = 0.6539 * Awareness_Index + 1.2661 (r = 0.7643, p < 0.001)
+SUPERVISED MACHINE LEARNING SUMMARY (N = 72, 70/30 TRAIN-TEST SPLIT)
+======================================================================
+Split: 50 Training Records (70%) / 22 Testing Records (30%), random_state = 42
 
-BINARY CLASSIFICATION (High >= 4.0 [n=47] vs Low/Moderate < 4.0 [n=25]):
-                      model  cv5_acc  cv10x5_acc  cv10x5_std  loocv_acc  loocv_weighted_f1  loocv_roc_auc
-Random Forest (max_depth=3)   0.8057      0.7984      0.0848     0.7917             0.7732         0.6953
-       Gaussian Naive Bayes   0.7771      0.7772      0.0932     0.7778             0.7607         0.7719
-         Linear SVM (C=1.0)   0.7771      0.7773      0.0831     0.7778             0.7490         0.7523
-  K-Nearest Neighbors (k=7)   0.7762      0.7747      0.0838     0.7778             0.7490         0.5915
-Decision Tree (max_depth=2)   0.7771      0.7661      0.0808     0.7639             0.7483         0.5834
-   Logistic Regression (L2)   0.7914      0.7801      0.0874     0.7639             0.7430         0.6860
+REGRESSION (Continuous Behavior_Index):
+                     model      predictors  train_n  test_n  test_r2  test_rmse  test_mae
+  Simple Linear Regression Awareness_Index       50      22   0.6391     0.7577    0.5710
+Multiple Linear Regression      Q2, Q3, Q4       50      22   0.6409     0.7558    0.5728
+SLR Formula: Behavior_Index = 0.4824 * Awareness_Index + 2.0327
+MLR Coefs  : {'Q2 Usage': -0.0485, 'Q3 Energy': 0.2371, 'Q4 Carbon': 0.2341} | Intercept = 2.2519
 
-3-CLASS CLASSIFICATION (Low [n=7], Medium [n=18], High [n=47]):
-                      model  cv5_acc  cv10x5_acc  cv10x5_std  loocv_acc  loocv_weighted_f1
-       Gaussian Naive Bayes   0.7381      0.7384      0.0578     0.7222             0.6744
-  K-Nearest Neighbors (k=7)   0.7371      0.7299      0.0689     0.7222             0.6594
-   Logistic Regression (L2)   0.7238      0.7261      0.0641     0.7222             0.6603
-Random Forest (max_depth=3)   0.7362      0.7247      0.0691     0.7083             0.6463
-Decision Tree (max_depth=2)   0.7219      0.7193      0.0838     0.7222             0.6961
-         Linear SVM (C=1.0)   0.7229      0.7134      0.0581     0.7222             0.6563
+CLASSIFICATION (High >= 4.0 [14 test] vs. Low/Moderate < 4.0 [8 test]):
+                       model  train_n  test_n  accuracy  precision_weighted  recall_weighted  f1_weighted
+ Decision Tree (max_depth=3)       50      22    0.7727              0.7775           0.7727       0.7575
+Support Vector Machine (SVM)       50      22    0.7273              0.7323           0.7273       0.6989
+        Gaussian Naive Bayes       50      22    0.7273              0.7323           0.7273       0.6989
+   K-Nearest Neighbors (k=5)       50      22    0.7273              0.7323           0.7273       0.6989
