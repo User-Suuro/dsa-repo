@@ -14,7 +14,7 @@ This study uses a four-stage analytics workflow covering community survey collec
 
 ## 3.2 Survey Collection and Instrument
 
-Over four weeks during the Second Semester of AY 2025-2026, we shared an eight-question Google Form across class group chats, student forums, and local social media pages in Daet and nearby towns of Camarines Norte using convenience and purposive sampling. Participation was voluntary and required clicking an informed consent box, and all 84 respondents agreed.
+Over four weeks during the Second Semester of Academic Year 2025-2026, we shared an eight-question Google Form across class group chats, student forums, and local social media pages in Daet and nearby towns of Camarines Norte using convenience and purposive sampling. Participation was voluntary and required clicking an informed consent box, and all 84 respondents agreed.
 
 Q1 captured age bracket and Q2 captured AI usage frequency from `1` (*Rarely*) to `5` (*Several times a day*). Q3 and Q4 used 5-point Likert scales (`1 = Strongly Disagree` to `5 = Strongly Agree`) to measure awareness of AI electricity use and data-center carbon emissions, whereas Q5 and Q6 asked whether respondents weigh environmental impact while using AI and whether they avoid AI when a task can be done without it. Across the `72` clean responses, Q3 through Q6 reached strong internal reliability (Cronbach's $\alpha = 0.91$). Q7 and Q8 were free-text boxes asking what environmental impact worried respondents most and what actions would raise public awareness and encourage responsible use.
 
@@ -32,7 +32,7 @@ For every clean respondent, we computed `Awareness_Index = (Q3 + Q4) / 2`, `Beha
 ### Stage 2: Supervised Machine Learning (`code/02_machine_learning.py`)
 We evaluated six standard supervised learning models in scikit-learn using a straightforward 70/30 train-test split (`50` training records and `22` held-out testing records, `random_state = 42`).
 
-For continuous `Behavior_Index` prediction, we trained Simple Linear Regression (`Awareness_Index` only) and Multiple Linear Regression (`Q2, Q3, Q4`), measuring test `R²`, `RMSE`, and `MAE`. For classification, we used `[Q2, Q3, Q4]` on a stratified 70/30 split (`14` High and `8` Low/Moderate test respondents) to predict High Responsible Behavior (`>= 4.0`) versus Low/Moderate (`< 4.0`). We compared four classic supervised classifiers: Decision Tree (`max_depth = 3`), Support Vector Machine (SVM, RBF kernel with feature scaling), Gaussian Naive Bayes, and K-Nearest Neighbors (`k = 5` with feature scaling), reporting test accuracy, weighted precision, recall, F1 score, and confusion matrices.
+For continuous `Behavior_Index` prediction, we trained Simple Linear Regression (`Awareness_Index` only) and Multiple Linear Regression (`Q2, Q3, Q4`), measuring test Coefficient of Determination (`R²`), Root Mean Square Error (`RMSE`), and Mean Absolute Error (`MAE`). For classification, we used `[Q2, Q3, Q4]` on a stratified 70/30 split (`14` High and `8` Low/Moderate test respondents) to predict High Responsible Behavior (`>= 4.0`) versus Low/Moderate (`< 4.0`). We compared four classic supervised classifiers: Decision Tree (`maximum depth = 3`), Support Vector Machine (`Radial Basis Function kernel` with feature scaling), Gaussian Naive Bayes, and K-Nearest Neighbors (`5 nearest neighbors, k = 5`, with feature scaling), reporting test accuracy, weighted precision, recall, F1 score, and confusion matrices.
 
 ---
 

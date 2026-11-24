@@ -10,14 +10,26 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+## Project Structure
+
+- `code/01_clean_and_analyze.py` and `code/data_cleaning/`:
+  - `config.py`, `spark_utils.py`, `cleaning.py`, `qualitative_coding.py`, `statistics.py`, `visualizations.py`, `main.py`
+- `code/02_machine_learning.py` and `code/machine_learning/`:
+  - `data_loader.py`, `simple_linear_regression.py`, `multiple_linear_regression.py`, `decision_tree.py`, `svm.py`, `naive_bayes.py`, `knn.py`, `visualizations.py`, `main.py`
+
 ## Run
 
 ```powershell
 # Step 1: PySpark Data Cleaning (84 -> 72), Q7/Q8 Categorization & Descriptive Analysis (Figs 1-4)
 .\.venv\Scripts\python.exe code\01_clean_and_analyze.py
+# Or run the modular coordinator directly:
+.\.venv\Scripts\python.exe code\data_cleaning\main.py
 
 # Step 2: Supervised Machine Learning with 70/30 Train-Test Split (Figs 5-6)
 .\.venv\Scripts\python.exe code\02_machine_learning.py
+# Or run the modular coordinator / individual models directly:
+.\.venv\Scripts\python.exe code\machine_learning\main.py
+.\.venv\Scripts\python.exe code\machine_learning\decision_tree.py
 ```
 
 ## Outputs
